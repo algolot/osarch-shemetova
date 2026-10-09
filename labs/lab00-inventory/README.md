@@ -24,7 +24,7 @@ ran sesveral commands through the PowerShell
 | **hardware virtualization** | True | (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled |
 
 ## What did not work the first time
-At first I tried to ran complete the task through the cmd but wmic was depricated on my windows vesrion
+At first I tried to complete the task through the cmd but wmic was depricated on my windows vesrion
 
 ## Evidence
 - [evidence/xxx.txt](evidence/xxx.txt) — one line on what this proves
