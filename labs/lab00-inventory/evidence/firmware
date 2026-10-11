@@ -1,1 +1,8 @@
+PS C:\Users\Vita> (Get-ComputerInfo).BiosFirmwareType
+Uefi
+PS C:\Users\Vita> (Get-CimInstance Win32_OperatingSystem).Version
+10.0.26200
+PS C:\Users\Vita> (Get-CimInstance Win32_BIOS).ReleaseDate
+
+Wednesday, July 31, 2024 5:00:00 AM
 
