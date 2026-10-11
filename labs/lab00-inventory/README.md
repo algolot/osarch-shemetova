@@ -28,6 +28,7 @@ At first I tried to complete the task through the cmd but wmic was depricated on
 
 ## Evidence
 - [evidence/xxx.txt](evidence/xxx.txt) — one line on what this proves
+- [labs/lab00-inventory/evidence/CPU] (
 
 
 
