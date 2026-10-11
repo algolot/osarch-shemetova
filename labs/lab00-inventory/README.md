@@ -24,7 +24,31 @@ ran sesveral commands through the PowerShell
 | **hardware virtualization** | True | (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled |
 
 ## What did not work the first time
-At first I tried to complete the task through the cmd but wmic was depricated on my windows vesrion
+- At first I tried to complete the task through the cmd but wmic was depricated on my windows vesrion
+- i used < Measure-Command { Import-Module NameOfModule }> to find the speed of the installed modules at first and it outputed an errror + some outout that didn't give the speed
+  Import-Module : Указанный модуль "NameOfModule" не был загружен, так как ни в одном из каталогов
+модулей не был обнаружен действительный файл модуля.
+строка:1 знак:19
++ Measure-Command { Import-Module NameOfModule }
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (NameOfModule:String) [Import-Module], FileNotFou
+   ndException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleComma
+   nd
+
+
+
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 0
+Milliseconds      : 44
+Ticks             : 446160
+TotalDays         : 5.16388888888889E-07
+TotalHours        : 1.23933333333333E-05
+TotalMinutes      : 0.0007436
+TotalSeconds      : 0.044616
+TotalMilliseconds : 44.616
 
 ## Evidence
 - [labs/lab00-inventory/evidence/CPU] (https://github.com/algolot/osarch-shemetova/blob/84d6ef7dcf6b1cf4da25665760a27972859825d2/labs/lab00-inventory/evidence/CPU) - Evidence source proves that the CPU model is AMD Ryzen 7 7435HS with 8 cores and 16 threads.
