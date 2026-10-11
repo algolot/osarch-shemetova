@@ -1,1 +1,6 @@
-
+PS C:\Users\Vita> (Get-PhysicalDisk).FriendlyName
+Micron MTFDKCD512QFM-1BD1AABLA
+PS C:\Users\Vita> (Get-PhysicalDisk).MediaType + " / " + (Get-Disk).BusType
+SSD / NVMe
+PS C:\Users\Vita> [math]::Round((Get-Volume -DriveLetter C).SizeRemaining / 1GB, 2)
+72.89
