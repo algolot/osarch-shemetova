@@ -27,12 +27,11 @@ ran sesveral commands through the PowerShell
 At first I tried to complete the task through the cmd but wmic was depricated on my windows vesrion
 
 ## Evidence
-- [evidence/xxx.txt](evidence/xxx.txt) — one line on what this proves
-- [labs/lab00-inventory/evidence/CPU] (https://github.com/algolot/osarch-shemetova/blob/84d6ef7dcf6b1cf4da25665760a27972859825d2/labs/lab00-inventory/evidence/CPU) -
-- [labs/lab00-inventory/evidence/memory] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/memory) -
-- [labs/lab00-inventory/evidence/disk] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/disk) -
-- [labs/lab00-inventory/evidence/firmware] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/firmware) -
-- [labs/lab00-inventory/evidence/hardware virtualization] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/hardware%20virtualization) - 
+- [labs/lab00-inventory/evidence/CPU] (https://github.com/algolot/osarch-shemetova/blob/84d6ef7dcf6b1cf4da25665760a27972859825d2/labs/lab00-inventory/evidence/CPU) - Evidence source proves that the CPU model is AMD Ryzen 7 7435HS with 8 cores and 16 threads.
+- [labs/lab00-inventory/evidence/memory] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/memory) - Evidence source proves that the total physical memory is approximately 23.69 GB.
+- [labs/lab00-inventory/evidence/disk] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/disk) - Evidence source proves that the disk is a Micron MTFDKCD512QFM-1BD1AABLA NVMe SSD with 72.89 GB of free space remaining on volume C:.
+- [labs/lab00-inventory/evidence/firmware] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/firmware) - Evidence source proves that the firmware type is UEFI, running on OS version 10.0.26200 with a BIOS release date of July 31, 2024.
+- [labs/lab00-inventory/evidence/hardware virtualization] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/hardware%20virtualization) - Evidence source proves that hardware virtualization firmware is present and enabled (True).
 
 
 
