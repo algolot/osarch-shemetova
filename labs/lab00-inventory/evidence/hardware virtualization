@@ -1,0 +1,2 @@
+PS C:\Users\Vita> (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled
+True
