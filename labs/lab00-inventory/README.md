@@ -28,7 +28,11 @@ At first I tried to complete the task through the cmd but wmic was depricated on
 
 ## Evidence
 - [evidence/xxx.txt](evidence/xxx.txt) — one line on what this proves
-- [labs/lab00-inventory/evidence/CPU] (
+- [labs/lab00-inventory/evidence/CPU] (https://github.com/algolot/osarch-shemetova/blob/84d6ef7dcf6b1cf4da25665760a27972859825d2/labs/lab00-inventory/evidence/CPU) -
+- [] ()
+- [] ()
+- [] ()
+- [] ()
 
 
 
