@@ -1,0 +1,7 @@
+PS C:\Users\Vita> (Get-CimInstance -ClassName Win32_Processor).Name
+>>
+AMD Ryzen 7 7435HS
+PS C:\Users\Vita> (Get-CimInstance -ClassName Win32_Processor).NumberOfCores
+8
+PS C:\Users\Vita> (Get-CimInstance -ClassName Win32_Processor).ThreadCount
+16
