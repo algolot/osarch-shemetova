@@ -14,7 +14,7 @@ ran sesveral commands through the PowerShell
 | **thread count** | 16 | (Get-CimInstance -ClassName Win32_Processor).ThreadCount |
 | **total memory** | 23.6921005249023 | (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB |
 | **the number of installed modules** | 90 | (Get-Module -ListAvailable).Count |
-| **speed** | Days              : 0 <br>Hours             : 0 <br>Minutes           : 0 <br>Seconds           : 0 <br>Milliseconds      : 131 <br>Ticks             : 1311400 <br>TotalDays         :1.51782407407407E-06 <br>TotalHours        : 3.64277777777778E-05 <br>TotalMinutes      : 0.00218566666666667 <br>TotalSeconds      : 0.13114 <br>TotalMilliseconds : 131.14| (Measure-Command { Import-Module NameOfModule } |
+| **speed** | DeviceLocator    Capacity Speed <br>-------------    -------- ----- <br>DIMM 0        12884901888  4800 <br>DIMM 0        12884901888  4800| Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table DeviceLocator, Capacity, Speed |
 | **disk model** | Micron MTFDKCD512QFM-1BD1AABLA | (Get-PhysicalDisk).FriendlyName |
 | **disk type** | SSD / NVMe | (Get-PhysicalDisk).MediaType + " / " + (Get-Disk).BusType |
 | **free space on the volume** | 73.62 | [math]::Round((Get-Volume -DriveLetter C).SizeRemaining / 1GB, 2) |
@@ -32,6 +32,4 @@ At first I tried to complete the task through the cmd but wmic was depricated on
 - [labs/lab00-inventory/evidence/disk] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/disk) - Evidence source proves that the disk is a Micron MTFDKCD512QFM-1BD1AABLA NVMe SSD with 72.89 GB of free space remaining on volume C:.
 - [labs/lab00-inventory/evidence/firmware] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/firmware) - Evidence source proves that the firmware type is UEFI, running on OS version 10.0.26200 with a BIOS release date of July 31, 2024.
 - [labs/lab00-inventory/evidence/hardware virtualization] (https://github.com/algolot/osarch-shemetova/blob/466909c4a73ff76f2764d8a07b73ba90912bfd02/labs/lab00-inventory/evidence/hardware%20virtualization) - Evidence source proves that hardware virtualization firmware is present and enabled (True).
-
-
 
