@@ -1,5 +1,5 @@
 # Lab 0 — Inventory your own machine
-
+Pair: Shemetova / Shemetova Driver first half: Shemetova
 Machine: Windows 11
 Date: 08.10.2026
 ## What I did
