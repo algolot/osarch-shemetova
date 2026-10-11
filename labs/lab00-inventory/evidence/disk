@@ -2,28 +2,10 @@ PS C:\Users\Vita> (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1
 23.6921005249023
 PS C:\Users\Vita> (Get-Module -ListAvailable).Count
 90
-PS C:\Users\Vita> Measure-Command { Import-Module NameOfModule }
-Import-Module : Указанный модуль "NameOfModule" не был загружен, так как ни в одном из каталогов
-модулей не был обнаружен действительный файл модуля.
-строка:1 знак:19
-+ Measure-Command { Import-Module NameOfModule }
-+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ResourceUnavailable: (NameOfModule:String) [Import-Module], FileNotFou
-   ndException
-    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleComma
-   nd
+PS C:\Users\Vita> Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table DeviceLocator, Capacity, Speed
 
-
-
-Days              : 0
-Hours             : 0
-Minutes           : 0
-Seconds           : 0
-Milliseconds      : 44
-Ticks             : 446160
-TotalDays         : 5.16388888888889E-07
-TotalHours        : 1.23933333333333E-05
-TotalMinutes      : 0.0007436
-TotalSeconds      : 0.044616
-TotalMilliseconds : 44.616
+DeviceLocator    Capacity Speed
+-------------    -------- -----
+DIMM 0        12884901888  4800
+DIMM 0        12884901888  4800
 
