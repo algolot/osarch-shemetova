@@ -1,0 +1,12 @@
+# virtual machine disks and installers — never commit these
+*.iso
+*.vmdk
+*.vdi
+*.qcow2
+*.vmem
+# system junk
+.DS_Store
+Thumbs.db
+# secrets
+.env
+*.key
