@@ -13,13 +13,13 @@ ran sesveral commands through the PowerShell
 | **core count** | 8 | (Get-CimInstance -ClassName Win32_Processor).NumberOfCores |
 | **thread count** | 16 | (Get-CimInstance -ClassName Win32_Processor).ThreadCount |
 | **total memory** | 23.6921005249023 | (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB |
-| **the number of installed modules** | 90 | (Get-Module -ListAvailable).Count |
+| **the number of installed modules** | DeviceLocator Size (GB) Speed Manufacturer<br>------------- --------- ----- ------------<br>DIMM 0               12  4800 Ramaxel Technology<br>DIMM 0               12  4800 Ramaxel Technology | Get-CimInstance Win32_PhysicalMemory | Select-Object DeviceLocator, @{Name="Size (GB)";Expression={$_.Capacity / 1GB}}, Speed, Manufacturer |
 | **speed** | DeviceLocator    Capacity Speed <br>-------------    -------- ----- <br>DIMM 0        12884901888  4800 <br>DIMM 0        12884901888  4800| Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table DeviceLocator, Capacity, Speed |
 | **disk model** | Micron MTFDKCD512QFM-1BD1AABLA | (Get-PhysicalDisk).FriendlyName |
 | **disk type** | SSD / NVMe | (Get-PhysicalDisk).MediaType + " / " + (Get-Disk).BusType |
 | **free space on the volume** | 73.62 | [math]::Round((Get-Volume -DriveLetter C).SizeRemaining / 1GB, 2) |
 | **firmware type** | Uefi | (Get-ComputerInfo).BiosFirmwareType |
-| **version** | 10.0.26200 | (Get-CimInstance Win32_OperatingSystem).Version |
+| **version** | PQCN12WW | (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion |
 | **date** | Wednesday, July 31, 2024 5:00:00 AM | (Get-CimInstance Win32_BIOS).ReleaseDate |
 | **hardware virtualization** | True | (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled |
 
