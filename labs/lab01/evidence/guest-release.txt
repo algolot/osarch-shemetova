@@ -1,1 +1,7 @@
-
+PS C:\Users\Vita> ssh -p 2222 vita@127.0.0.1 "lsb_release -a" > guest-release.txt
+vita@127.0.0.1's password:
+PS C:\Users\Vita> Get-Content guest-release.txt
+Distributor ID: Ubuntu
+Description:    Ubuntu 26.04.1 LTS
+Release:        26.04
+Codename:       resolute
