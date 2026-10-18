@@ -37,7 +37,6 @@ ran sesveral commands through the PowerShell
    nd
 
 
-
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -49,6 +48,11 @@ TotalHours        : 1.23933333333333E-05
 TotalMinutes      : 0.0007436
 TotalSeconds      : 0.044616
 TotalMilliseconds : 44.616
+
+
+- RAM Module Count: Initially used (Get-Module -ListAvailable).Count, which incorrectly counted installed PowerShell modules instead of physical hardware. This was corrected by querying Get-CimInstance Win32_PhysicalMemory to accurately capture the 2 x 12 GB stick configuration.
+
+- BIOS / System Identification: Originally relied on Win32_OperatingSystem.Version, which returned the Windows OS build rather than hardware firmware. This was corrected by using (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion to properly pull the low-level BIOS version.
 
 ## Evidence
 - [labs/lab00-inventory/evidence/CPU] (https://github.com/algolot/osarch-shemetova/blob/84d6ef7dcf6b1cf4da25665760a27972859825d2/labs/lab00-inventory/evidence/CPU) - Evidence source proves that the CPU model is AMD Ryzen 7 7435HS with 8 cores and 16 threads.
