@@ -22,8 +22,8 @@ The VM boots; the break-and-rollback cycle is shown in the evidence below.
 - Also when i tried to break the machine i had to run the commands several times because of typos (i miss the ctrl+c ctrl+v)
 
 ## Evidence
-- [labs/lab01/evidence/vm-settings1.png]([evidence/vm-settings.png](https://github.com/algolot/osarch-shemetova/blob/fbe9993194e2c69260dcc868468de118fb666072/labs/lab01/evidence/vm-settings1.png)) — CPU & memory as configured
-- [labs/lab01/evidence/vm-settings2.png]([evidence/vm-settings.png](https://github.com/algolot/osarch-shemetova/blob/fbe9993194e2c69260dcc868468de118fb666072/labs/lab01/evidence/vm-settings2.png)) — disk as configured
-- [labs/lab01/evidence/guest-release.txt]([evidence/guest-release.txt](https://github.com/algolot/osarch-shemetova/blob/fbe9993194e2c69260dcc868468de118fb666072/labs/lab01/evidence/guest-release.txt)) — Ubuntu Server is running in the guest
-- [labs/lab01/evidence/broken.png]([evidence/broken.png](https://github.com/algolot/osarch-shemetova/blob/fbe9993194e2c69260dcc868468de118fb666072/labs/lab01/evidence/broken.png)) — the guest in its broken state
-- [labs/lab01/evidence/snapshot-list.png]([evidence/snapshot-list.png](https://github.com/algolot/osarch-shemetova/blob/fbe9993194e2c69260dcc868468de118fb666072/labs/lab01/evidence/snapshot-list.png)) — the snapshot, after the rollback
+- [labs/lab01/evidence/vm-settings1.png](evidence/vm-settings1.png)  — CPU & memory as configured
+- [labs/lab01/evidence/vm-settings2.png](evidence/vm-settings2.png)) — disk as configured
+- [labs/lab01/evidence/guest-release.txt](evidence/guest-release.txt)) — Ubuntu Server is running in the guest
+- [labs/lab01/evidence/broken.png](evidence/broken.png)) — the guest in its broken state
+- [labs/lab01/evidence/snapshot-list.png](evidence/snapshot-list.png)) — the snapshot, after the rollback
