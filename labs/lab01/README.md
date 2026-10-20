@@ -12,7 +12,7 @@ Date: 19.10.2026
 5. Rolled back to clean-install: <br>cat /etc/hostname <br>sudo reboot 
 
 ## Resource justification
-I gave the virtual machine 2 vCPU cores and 2 GB of RAM out of my host's 16 threads and 24 GB of RAM. This leaves plenty of resources for my Windows host to run smoothly while idle, and keeps enough headroom to spin up a second guest machine in Lab 2 without overloading the system. Also it allows me to save resources for my personal use like videogames and 4 open browsers
+I allocated 2 vCPU cores and 2 GB of RAM to the virtual machine, out of my host's total 16 threads and 24 GB of RAM. This configuration leaves sufficient resources for my Windows host to run smoothly while idle and provides enough headroom to spin up a second guest machine in Lab 2 without overloading the system. Additionally, it preserves adequate system capacity for my personal use, including running video games and multiple active browser windows. This headroom is particularly important because I frequently use resource-intensive applications such as Adobe software with multiple layers, which place a heavy demand on system RAM
 
 ## Result
 The VM boots; the break-and-rollback cycle is shown in the evidence below.
