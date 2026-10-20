@@ -1,7 +1,11 @@
 PS C:\Users\Vita> (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB
 23.6921005249023
-PS C:\Users\Vita> (Get-Module -ListAvailable).Count
-90
+PS C:\Users\Vita> Get-CimInstance Win32_PhysicalMemory | Select-Object DeviceLocator, @{Name="Size (GB)";Expression={$_.Capacity / 1GB}}, Speed, Manufacturer
+
+DeviceLocator Size (GB) Speed Manufacturer
+------------- --------- ----- ------------
+DIMM 0               12  4800 Ramaxel Technology
+DIMM 0               12  4800 Ramaxel Technology
 PS C:\Users\Vita> Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table DeviceLocator, Capacity, Speed
 
 DeviceLocator    Capacity Speed
