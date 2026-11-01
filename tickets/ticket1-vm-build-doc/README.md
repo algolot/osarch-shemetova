@@ -44,7 +44,7 @@ myself? Thanks"
 
 - [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png) — Proves the initial Ubuntu VM creation wizard parameters and manual setup selection.
 - [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-windows.png](evidence/01-new-vm-wizard-windows.png) — Proves the initial Windows VM configuration and hardware settings.
-- [tickets/ticket1-vm-build-doc/evidence/02-disk-settings-ubuntu.png](evidence/02-disk-settings-ubuntu.png) — Shows the 25 GB dynamic VDI virtual disk configuration for Ubuntu.
+- [tickets/ticket1-vm-build-doc/evidence/02-disk-settings-ubuntu.png](evidence/02-disk-settings-ubuntu.jpg) — Shows the 25 GB dynamic VDI virtual disk configuration for Ubuntu.
 - [tickets/ticket1-vm-build-doc/evidence/02-disk-settings-windows.png](evidence/02-disk-settings-windows.png) — Shows the virtual hard disk allocation settings for Windows.
 - [tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-ubuntu.png](evidence/02-vm-hardware-ubuntu.png) — Shows the CPU & memory as configured for ubuntu.
 - [tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-windows.png](evidence/02-vm-hardware-windows.png) — Shows the CPU & memory as configured for windows.
