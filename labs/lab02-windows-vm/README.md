@@ -18,7 +18,7 @@ Date: <31.10.2026>
 ```
               Internet
                  |
-      Host laptop (24 GB RAM, AMD Ryzen 7)
+      Host laptop 192.168.0.3 (home Wi-Fi)
                  |
      [VirtualBox NAT Network · 10.0.2.0/24]
           /                        \
