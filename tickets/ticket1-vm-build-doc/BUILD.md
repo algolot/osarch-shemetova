@@ -9,7 +9,7 @@ Ubuntu VM
 6. Uncheck Proceed with Unattended Installation so that you can follow the installer manually.
 7. Keep the wizard open for the hardware and disk settings in Steps 2–3.
 
-!Ubuntu VM creation wizard
+[tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png)
 
 Why: Ubuntu LTS provides a Linux environment for development and testing. Using the Ubuntu (64-bit) profile gives VirtualBox suitable starting defaults. Manual installation makes the process easier to explain and reproduce.
 
@@ -21,7 +21,7 @@ Windows VM
 5. Uncheck Proceed with Unattended Installation.
 6. Continue with Steps 2–3 for its hardware and disk configuration.
 
-!Windows VM creation wizard
+[tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-windows.png](evidence/01-new-vm-wizard-windows.png)
 
 Why: Windows provides a second operating-system environment for checking whether software behaves differently from Linux. The Enterprise Evaluation edition is intended for testing rather than permanent production use. Manual installation allows the user to verify each installer choice.
 
@@ -33,11 +33,15 @@ For Ubuntu VM:
 3. Set the Number of CPUs to 2.
 4. Leave the remaining settings at their defaults.
 
+[tickets/ticket1-vm-build-doc/evidence/02-disk-settings-ubuntu.png](evidence/02-disk-settings-ubuntu.jpg)
+
 For Windows VM:
 1. Expand the "Specify Virtual Hardware" section.
 2. Set Base Memory to 4096 MB (4 GB).
 3. Set the Number of CPUs to 2.
 4. Leave the remaining settings at their defaults.
+
+[tickets/ticket1-vm-build-doc/evidence/02-disk-settings-windows.png](evidence/02-disk-settings-windows.png)
 
 Why: Both virtual machines were allocated 4 GB of RAM and 2 CPU cores to provide sufficient resources for basic operating system tasks and software testing. These settings balance performance and resource usage, allowing the host computer to remain responsive. Using the same hardware configuration also makes it easier to compare the two operating systems.
 
@@ -52,6 +56,8 @@ For Ubuntu VM:
 5. Leave "Pre-allocate Full Size" unchecked.
 6. Continue with the virtual machine creation.
 
+[tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-ubuntu.png](evidence/02-vm-hardware-ubuntu.png)
+
 For Windows VM:
 1. Expand the "Specify Virtual Hard Disk" section.
 2. Select "Create a New Virtual Hard Disk"
@@ -59,6 +65,8 @@ For Windows VM:
 4. Select VDI (VirtualBox Disk Image) as the disk format.
 5. Leave "Pre-allocate Full Size" unchecked.
 6. Continue with the virtual machine creation.
+
+[tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-windows.png](evidence/02-vm-hardware-windows.png)
 
 Why: Both virtual machines were assigned 25 GB of virtual disk space to minimize storage consumption on the host computer. The VDI format was selected because it is the native disk format of VirtualBox. Full-size preallocation was disabled so that the virtual disk files grow as data is added, rather than immediately occupying the entire allocated space.
 
@@ -76,9 +84,6 @@ Ubuntu installation
 7. Complete installation and restart the VM when prompted. If it asks you to remove installation media, use Devices → Optical Drives in VirtualBox to eject the ISO, then press Enter.
 8. Log in and confirm that the Ubuntu desktop opens.
 
-!Ubuntu installer
-!Ubuntu desktop after installation
-
 Why: Installing onto the virtual disk keeps test software separate from the physical laptop. A local test account is sufficient for the assignment and avoids exposing real personal credentials.
 
 Windows installation
@@ -89,9 +94,6 @@ Windows installation
 5. Complete the installation and restart when required.
 6. Follow the first-run setup screens to create the permitted test account and finish privacy/device settings.
 7. Log in and confirm that the Windows desktop opens.
-
-!Windows installer
-!Windows desktop after installation
 
 Why: A separate Windows guest lets a developer test Windows-specific behavior without modifying the host operating system. The evaluation edition is temporary, so it should not be treated as a permanent licensed workstation.
 
@@ -106,8 +108,8 @@ Why: A separate Windows guest lets a developer test Windows-specific behavior wi
 7. Repeat steps 3–6 for lab02-windows, using the same NAT Network.
 8. Start both guests.
 
-!Ubuntu network adapter settings
-!Windows network adapter settings
+[tickets/ticket1-vm-build-doc/evidence/03-network-adapter-ubuntu.png](evidence/03-network-adapter-ubuntu.png) 
+[tickets/ticket1-vm-build-doc/evidence/03-network-adapter-windows.png](evidence/03-network-adapter-windows.png)
 
 Why: A shared NAT Network gives both guests internet access through the host and allows them to communicate with each other. Unlike a bridged adapter, it does not require the guests to appear as separate machines on the physical teaching network. NAT and NAT Network are different options: two guests on separate default NAT connections usually cannot reach each other directly. A NAT Network is not a security sandbox against all network threats, so use only disposable test data.
 
@@ -153,11 +155,15 @@ Bash
 ssh -p 2222 vita@127.0.0.1 "ip addr" > evidence/ip-addr-linux.txt
 Test Windows → Ubuntu:
 
+[tickets/ticket1-vm-build-doc/evidence/04-guest-uname-ubuntu.txt](evidence/04-guest-uname-ubuntu.txt)
+
 2. In PowerShell on Windows, run:
 
 PowerShell
 ping <Ubuntu_IP>
 Replies come back immediately because Ubuntu's firewall is inactive by default.
+
+[tickets/ticket1-vm-build-doc/evidence/04-system-info-windows.txt](evidence/04-system-info-windows.txt)
 
 3. Test Ubuntu → Windows (and handle the firewall properly):
 
@@ -181,6 +187,8 @@ Re-run the ping from Ubuntu — replies will now succeed.
 
 Expected result: Ubuntu → Windows, Windows → Ubuntu, Ubuntu → internet, and Windows → internet each return successful replies with 0% packet loss.
 
+[tickets/ticket1-vm-build-doc/evidence/05-ping-between-guests.txt](evidence/05-ping-between-guests.txt) 
+
 Why: Internet access does not automatically mean that two VMs can reach one another. Testing both directions confirms guest-to-guest connectivity, and using a targeted firewall rule ensures security is maintained rather than recklessly disabling protection.
 
 ##Step 8. Creating recovery snapshots
@@ -191,7 +199,7 @@ Ubuntu
 4. Name it Ubuntu - Clean Installation and confirm.
 5. Check that it appears in the snapshot list.
 
-!Ubuntu snapshot list
+[tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-ubuntu.png](evidence/06-snapshot-list-ubuntu.png) 
 
 Windows
 1. Shut down lab02-windows normally.
@@ -200,7 +208,7 @@ Windows
 4. Name it Windows - Clean Installation and confirm.
 5. Check that it appears in the list.
 
-!Windows snapshot list
+[tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-windows.png](evidence/06-snapshot-list-windows.png)
 
 Why: A snapshot records a recoverable VM state. If testing damages the guest configuration, the developer can revert to a clean state instead of reinstalling the OS. Snapshots are not a substitute for backups of important files.
 
@@ -212,7 +220,5 @@ Why: A snapshot records a recoverable VM state. If testing damages the guest con
 4. Keep the virtual disks, ISO files and local test credentials under the control of the person responsible for the machines. Do not publish passwords or sensitive test data.
 5. In the semester repository, put this guide at tickets/ticket1-vm-build-doc/BUILD.md and all screenshots and command outputs in its evidence/ folder.
 6. Open the Markdown file in GitHub and verify that every screenshot displays and that every evidence link works. A new user should be able to follow the guide without guessing about a missing menu or setting.
-
-!Both guests in VirtualBox Manager
 
 Why: The handover is complete only when someone else can reproduce the machines and verify that they work. The separate README.md report must still explain the original request, its missing requirements and assumptions, the decisions made, the evidence, one real problem encountered and its resolution, and what could be improved next time.
