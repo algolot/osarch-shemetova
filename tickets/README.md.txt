@@ -1,0 +1,57 @@
+# Ticket 1 — “New developer starts Monday, needs a test machine”
+
+## 1. What was asked
+
+"From: Aigerim T. (Office Manager)
+Subject: test machine for new dev
+Hi, we have someone starting on Monday and he needs a test computer
+set up. Nothing special, just so he can try things without breaking
+anything. Can you write down how to do it so I can do the next one
+myself? Thanks"
+
+## 2. What was actually needed
+
+- **What the request left out:** 
+  - The request did not specify which operating systems are required (Linux, Windows, or both).
+  - No hardware resource details (host RAM, free disk space, CPU cores) or target VM allocations (memory, disk size) were provided.
+  - Network requirements (internet access, guest-to-guest communication, or local network integration) were omitted.
+  - No mention of software tools, desktop environments, or automated/manual setup preferences.
+- **Where the request is wrong:** 
+  - The request implies that a single "test computer" can be set up arbitrarily ("nothing special"), whereas a professional development environment typically requires both a Linux environment (for standard server/dev tasks) and a Windows environment (for platform-specific compatibility testing). Furthermore, it treats a hypervisor build process as a simple one-off task without documenting the configuration choices needed for reproducibility.
+- **What I would have asked the requester:**
+  - Which operating system distributions and versions does the new developer need?
+  - What are the performance and resource constraints of the host machine?
+  - Will the guest machines need to interact with each other or external services?
+- **What I assumed instead of an answer:**
+  - I assumed we need a dual-guest environment consisting of **Ubuntu Linux** and **Windows 11 Enterprise Evaluation** to cover multi-platform development and testing needs.
+  - I assumed standard conservative resource allocations (4 GB RAM and 2 CPU cores per VM, with a 25 GB virtual disk) to fit comfortably within typical host limitations while keeping the host responsive.
+  - I assumed a shared VirtualBox **NAT Network** configuration so both guests can access the internet and communicate directly with each other without violating physical campus network filtering rules.
+
+## 3. What I did
+
+1. **Prepared Virtual Machines:** Created two separate virtual machines (`lab01-ubuntu` and `lab02-windows`) in Oracle VirtualBox following manual configuration steps rather than unattended installation to maintain full control over each installer choice.
+2. **Allocated Resources:** Assigned 4 GB of RAM and 2 CPU cores to each virtual machine, along with 25 GB dynamically allocated VDI virtual hard disks, balancing performance and host resource availability.
+3. **Configured Networking:** Set up a shared VirtualBox **NAT Network** with DHCP enabled for both adapters, ensuring both guests obtained internal IP addresses, internet access, and mutual visibility.
+4. **Verified Systems & Internet:** Started both VMs, used SSH with port forwarding (port 2222) to capture Linux system info (`uname-result.txt`), and ran system checks (`systeminfo`, `ipconfig`, and ping tests) on Windows.
+5. **Configured Firewall & Inter-Guest Communication:** Tested guest-to-guest connectivity. Because Windows Defender Firewall blocks incoming ICMP echo requests by default on "Public" network profiles, I added a specific targeted inbound rule (`New-NetFirewallRule`) for ICMPv4 instead of dangerously disabling the entire firewall.
+6. **Created Recovery Snapshots:** Shut down both guests and took clean-installation snapshots (`Ubuntu - Clean Installation` and `Windows - Clean Installation`) to allow quick recovery if future testing breaks the configuration.
+
+## 4. What I would do differently
+
+- **Disk Sizing for Windows:** While a 25 GB virtual disk is adequate for a basic initial setup and lightweight testing, 25 GB fills up rapidly under Windows 11 once operating system updates, visual studio tools, and dependencies are installed. Next time, I would allocate a larger virtual disk (e.g., 64 GB or 80 GB) for the Windows guest to avoid running out of storage space prematurely.
+
+## 5. Evidence
+
+- `evidence/01-new-vm-wizard-ubuntu.png` — Proves the initial Ubuntu VM creation wizard parameters and manual setup selection.
+- `evidence/01-new-vm-wizard-windows.png` — Proves the initial Windows VM configuration and hardware settings.
+- `evidence/02-disk-settings-ubuntu.png` — Shows the 25 GB dynamic VDI virtual disk configuration for Ubuntu.
+- `evidence/02-disk-settings-windows.png` — Shows the virtual hard disk allocation settings for Windows.
+- `evidence/02-vm-hardware-ubuntu.png`  — Shows the CPU & memory as configured for ubuntu.
+- `evidence/02-vm-hardware-windows.png`  — Shows the CPU & memory as configured for windows.
+- `evidence/03-network-adapter-ubuntu.png` — Confirms the Ubuntu network adapter is attached to the shared NAT Network.
+- `evidence/03-network-adapter-windows.png` — Confirms the Windows network adapter uses the same NAT Network.
+- `evidence/04-guest-uname.txt` — Contains the remote SSH command output verifying the Ubuntu kernel and release version.
+- `evidence/04-system-info-windows.txt` — Proves the Windows network configuration and active IPv4 address assignment.
+- `evidence/05-ping-both-ways.txt` — Documents successful bidirectional ping results (Ubuntu ⇄ Windows and both to the internet) with 0% packet loss.
+- `evidence/06-snapshot-list-ubuntu.png` — Proves the creation of the clean-install recovery snapshot for the Ubuntu VM.
+- `evidence/06-snapshot-list-windows.png` — Proves the creation of the clean-install recovery snapshot for the Windows VM.
