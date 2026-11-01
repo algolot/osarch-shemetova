@@ -38,7 +38,7 @@ myself? Thanks"
 
 ## 4. What I would do differently
 
-- **Disk Sizing for Windows:** While a 25 GB virtual disk is adequate for a basic initial setup and lightweight testing, 25 GB fills up rapidly under Windows 11 once operating system updates, visual studio tools, and dependencies are installed. Next time, I would allocate a larger virtual disk (e.g., 64 GB or 80 GB) for the Windows guest to avoid running out of storage space prematurely.
+- **Disk Sizing for Windows:** While a 25 GB virtual disk is adequate for a basic initial setup and lightweight testing, 25 GB fills up rapidly under Windows 11 once operating system updates, visual studio tools, and dependencies are installed. Next time, I would allocate a larger virtual disk (e.g. 64 GB or 80 GB) for the Windows guest to avoid running out of storage space prematurely
 
 ## 5. Evidence
 
