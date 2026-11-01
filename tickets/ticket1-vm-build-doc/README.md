@@ -41,17 +41,17 @@ myself? Thanks"
 - **Disk Sizing for Windows:** While a 25 GB virtual disk is adequate for a basic initial setup and lightweight testing, 25 GB fills up rapidly under Windows 11 once operating system updates, visual studio tools, and dependencies are installed. Next time, I would allocate a larger virtual disk (e.g., 64 GB or 80 GB) for the Windows guest to avoid running out of storage space prematurely.
 
 ## 5. Evidence
- [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png)  
-- `evidence/01-new-vm-wizard-ubuntu.png` — Proves the initial Ubuntu VM creation wizard parameters and manual setup selection.
-- `evidence/01-new-vm-wizard-windows.png` — Proves the initial Windows VM configuration and hardware settings.
-- `evidence/02-disk-settings-ubuntu.png` — Shows the 25 GB dynamic VDI virtual disk configuration for Ubuntu.
-- `evidence/02-disk-settings-windows.png` — Shows the virtual hard disk allocation settings for Windows.
-- `evidence/02-vm-hardware-ubuntu.png`  — Shows the CPU & memory as configured for ubuntu.
-- `evidence/02-vm-hardware-windows.png`  — Shows the CPU & memory as configured for windows.
-- `evidence/03-network-adapter-ubuntu.png` — Confirms the Ubuntu network adapter is attached to the shared NAT Network.
-- `evidence/03-network-adapter-windows.png` — Confirms the Windows network adapter uses the same NAT Network.
-- `evidence/04-guest-uname.txt` — Contains the remote SSH command output verifying the Ubuntu kernel and release version.
-- `evidence/04-system-info-windows.txt` — Proves the Windows network configuration and active IPv4 address assignment.
-- `evidence/05-ping-both-ways.txt` — Documents successful bidirectional ping results (Ubuntu ⇄ Windows and both to the internet) with 0% packet loss.
-- `evidence/06-snapshot-list-ubuntu.png` — Proves the creation of the clean-install recovery snapshot for the Ubuntu VM.
-- `evidence/06-snapshot-list-windows.png` — Proves the creation of the clean-install recovery snapshot for the Windows VM.
+
+- [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png) — Proves the initial Ubuntu VM creation wizard parameters and manual setup selection.
+- [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-windows.png](evidence/01-new-vm-wizard-windows.png) — Proves the initial Windows VM configuration and hardware settings.
+- [tickets/ticket1-vm-build-doc/evidence/02-disk-settings-ubuntu.png](evidence/02-disk-settings-ubuntu.png) — Shows the 25 GB dynamic VDI virtual disk configuration for Ubuntu.
+- [tickets/ticket1-vm-build-doc/evidence/02-disk-settings-windows.png](evidence/02-disk-settings-windows.png) — Shows the virtual hard disk allocation settings for Windows.
+- [tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-ubuntu.png](evidence/02-vm-hardware-ubuntu.png) — Shows the CPU & memory as configured for ubuntu.
+- [tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-windows.png](evidence/02-vm-hardware-windows.png) — Shows the CPU & memory as configured for windows.
+- [tickets/ticket1-vm-build-doc/evidence/03-network-adapter-ubuntu.png](evidence/03-network-adapter-ubuntu.png) — Confirms the Ubuntu network adapter is attached to the shared NAT Network.
+- [tickets/ticket1-vm-build-doc/evidence/03-network-adapter-windows.png](evidence/03-network-adapter-windows.png) — Confirms the Windows network adapter uses the same NAT Network.
+- [tickets/ticket1-vm-build-doc/evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) — Contains the remote SSH command output verifying the Ubuntu kernel and release version.
+- [tickets/ticket1-vm-build-doc/evidence/04-system-info-windows.txt](evidence/04-system-info-windows.txt) — Proves the Windows network configuration and active IPv4 address assignment.
+- [tickets/ticket1-vm-build-doc/evidence/05-ping-both-ways.txt](evidence/05-ping-both-ways.txt) — Documents successful bidirectional ping results (Ubuntu ⇄ Windows and both to the internet) with 0% packet loss.
+- [tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-ubuntu.png](evidence/06-snapshot-list-ubuntu.png) — Proves the creation of the clean-install recovery snapshot for the Ubuntu VM.
+- [tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-windows.png](evidence/06-snapshot-list-windows.png) — Proves the creation of the clean-install recovery snapshot for the Windows VM.
