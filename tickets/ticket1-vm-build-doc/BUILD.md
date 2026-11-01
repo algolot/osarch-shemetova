@@ -1,4 +1,4 @@
-##Step 1. Creating Ubuntu and Windows Virtual Machines
+## Step 1. Creating Ubuntu and Windows Virtual Machines
 
 Ubuntu VM
 1. Open Oracle VirtualBox.
@@ -25,7 +25,7 @@ Windows VM
 
 Why: Windows provides a second operating-system environment for checking whether software behaves differently from Linux. The Enterprise Evaluation edition is intended for testing rather than permanent production use. Manual installation allows the user to verify each installer choice.
 
-##Step 2. Allocating RAM and CPU
+## Step 2. Allocating RAM and CPU
 
 For Ubuntu VM:
 1. Expand the "Specify Virtual Hardware" section.
@@ -46,7 +46,7 @@ For Windows VM:
 Why: Both virtual machines were allocated 4 GB of RAM and 2 CPU cores to provide sufficient resources for basic operating system tasks and software testing. These settings balance performance and resource usage, allowing the host computer to remain responsive. Using the same hardware configuration also makes it easier to compare the two operating systems.
 
 
-##Step 3. Creating the Virtual Hard Disks
+## Step 3. Creating the Virtual Hard Disks
 
 For Ubuntu VM:
 1. Expand the "Specify Virtual Hard Disk" section.
@@ -73,7 +73,7 @@ Why: Both virtual machines were assigned 25 GB of virtual disk space to minimize
 Note: While 25 GB may be sufficient for a minimal Ubuntu installation, it is below the recommended storage requirement for Windows 11. A larger virtual disk would be preferable for Windows to accommodate updates and additional software.
 
 
-##Step 4. Installing the operating systems
+## Step 4. Installing the operating systems
 Ubuntu installation
 1. Select lab01-ubuntu in VirtualBox and click Start.
 2. When the Ubuntu installer appears, choose Install Ubuntu (or Try or Install Ubuntu, then Install Ubuntu, depending on the installer screen).
@@ -98,7 +98,7 @@ Windows installation
 Why: A separate Windows guest lets a developer test Windows-specific behavior without modifying the host operating system. The evaluation edition is temporary, so it should not be treated as a permanent licensed workstation.
 
 
-##Step 5. Network configuration (both VMs)
+## Step 5. Network configuration (both VMs)
 1. Shut down both virtual machines before changing their network settings.
 2. In VirtualBox, open Tools → Network (or Network Manager, depending on the version). Find NAT Networks and create a NAT Network if one does not already exist. Leave DHCP enabled so the guests can receive addresses automatically.
 3. Select lab01-ubuntu → Settings → Network → Adapter 1.
@@ -114,7 +114,7 @@ Why: A separate Windows guest lets a developer test Windows-specific behavior wi
 Why: A shared NAT Network gives both guests internet access through the host and allows them to communicate with each other. Unlike a bridged adapter, it does not require the guests to appear as separate machines on the physical teaching network. NAT and NAT Network are different options: two guests on separate default NAT connections usually cannot reach each other directly. A NAT Network is not a security sandbox against all network threats, so use only disposable test data.
 
 
-##Step 6. Checking the installed systems and internet access
+## Step 6. Checking the installed systems and internet access
 Ubuntu
 1. In Ubuntu, ensure SSH is available or use the VirtualBox console. To collect evidence remotely from the host via SSH (using port forwarding configured on port 2222), run:
 
@@ -140,7 +140,7 @@ Confirm that systeminfo identifies Windows, ipconfig shows an IPv4 address, and 
 Why: This proves that the Windows guest is installed and connected, rather than assuming it is operational just because VirtualBox starts it.
 
 
-##Step 7. Testing communication between the two guests and fixing the firewall
+## Step 7. Testing communication between the two guests and fixing the firewall
 1.Find both addresses:
 
 On Windows: Open PowerShell and run ipconfig. Note the IPv4 address of the adapter (e.g., 192.168.80.131). Save it using:
@@ -191,7 +191,7 @@ Expected result: Ubuntu → Windows, Windows → Ubuntu, Ubuntu → internet, an
 
 Why: Internet access does not automatically mean that two VMs can reach one another. Testing both directions confirms guest-to-guest connectivity, and using a targeted firewall rule ensures security is maintained rather than recklessly disabling protection.
 
-##Step 8. Creating recovery snapshots
+## Step 8. Creating recovery snapshots
 Ubuntu
 1. Shut down lab01-ubuntu normally from inside Ubuntu.
 2. In VirtualBox Manager, select the Ubuntu VM and open Snapshots.
@@ -213,7 +213,7 @@ Windows
 Why: A snapshot records a recoverable VM state. If testing damages the guest configuration, the developer can revert to a clean state instead of reinstalling the OS. Snapshots are not a substitute for backups of important files.
 
 
-##Step 9. Final checks and handover
+## Step 9. Final checks and handover
 1. Start both VMs and confirm that each reaches its desktop.
 2. Confirm that both can reach the internet and each other using the commands in Steps 6–7.
 3. Confirm that a clean-install snapshot exists for each guest.
