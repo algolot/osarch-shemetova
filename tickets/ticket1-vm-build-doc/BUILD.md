@@ -16,8 +16,8 @@ Before starting, you need to download and install the required tools:
 6. Uncheck Proceed with Unattended Installation so that you can follow the installer manually.
 7. Keep the wizard open for the hardware and disk settings in Steps 2–3.
 
-[tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png)
 ![](evidence/01-new-vm-wizard-ubuntu.png)
+
 *Why: Ubuntu LTS provides a Linux environment for development and testing. Using the Ubuntu (64-bit) profile gives VirtualBox suitable starting defaults. Manual installation makes the process easier to explain and reproduce.*
 
 **Windows VM**
@@ -28,7 +28,7 @@ Before starting, you need to download and install the required tools:
 5. Uncheck Proceed with Unattended Installation.
 6. Continue with Steps 2–3 for its hardware and disk configuration.
 
-[tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-windows.png](evidence/01-new-vm-wizard-windows.png)
+![](evidence/01-new-vm-wizard-windows.png)
 
 *Why: Windows provides a second operating-system environment for checking whether software behaves differently from Linux. The Enterprise Evaluation edition is intended for testing rather than permanent production use. Manual installation allows the user to verify each installer choice.*
 
@@ -40,7 +40,7 @@ Before starting, you need to download and install the required tools:
 3. Set the Number of CPUs to 2.
 4. Leave the remaining settings at their defaults.
 
-[tickets/ticket1-vm-build-doc/evidence/02-disk-settings-ubuntu.png](evidence/02-disk-settings-ubuntu.jpg)
+![](evidence/02-disk-settings-ubuntu.jpg)
 
 **For Windows VM:**
 1. Expand the "Specify Virtual Hardware" section.
@@ -48,7 +48,7 @@ Before starting, you need to download and install the required tools:
 3. Set the Number of CPUs to 2.
 4. Leave the remaining settings at their defaults.
 
-[tickets/ticket1-vm-build-doc/evidence/02-disk-settings-windows.png](evidence/02-disk-settings-windows.png)
+![](evidence/02-disk-settings-windows.png)
 
 *Why: Both virtual machines were allocated 4 GB of RAM and 2 CPU cores to provide sufficient resources for basic operating system tasks and software testing. These settings balance performance and resource usage, allowing the host computer to remain responsive. Using the same hardware configuration also makes it easier to compare the two operating systems.*
 
@@ -63,7 +63,7 @@ Before starting, you need to download and install the required tools:
 5. Leave "Pre-allocate Full Size" unchecked.
 6. Continue with the virtual machine creation.
 
-[tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-ubuntu.png](evidence/02-vm-hardware-ubuntu.png)
+![](evidence/02-vm-hardware-ubuntu.png)
 
 **For Windows VM:**
 1. Expand the "Specify Virtual Hard Disk" section.
@@ -73,7 +73,7 @@ Before starting, you need to download and install the required tools:
 5. Leave "Pre-allocate Full Size" unchecked.
 6. Continue with the virtual machine creation.
 
-[tickets/ticket1-vm-build-doc/evidence/02-vm-hardware-windows.png](evidence/02-vm-hardware-windows.png)
+![](evidence/02-vm-hardware-windows.png)
 
 *Why: Both virtual machines were assigned 25 GB of virtual disk space to minimize storage consumption on the host computer. The VDI format was selected because it is the native disk format of VirtualBox. Full-size preallocation was disabled so that the virtual disk files grow as data is added, rather than immediately occupying the entire allocated space.*
 
@@ -115,8 +115,8 @@ Before starting, you need to download and install the required tools:
 7. Repeat steps 3–6 for lab02-windows, using the same NAT Network.
 8. Start both guests.
 
-[tickets/ticket1-vm-build-doc/evidence/03-network-adapter-ubuntu.png](evidence/03-network-adapter-ubuntu.png) 
-[tickets/ticket1-vm-build-doc/evidence/03-network-adapter-windows.png](evidence/03-network-adapter-windows.png)
+![](evidence/03-network-adapter-ubuntu.png) 
+![](evidence/03-network-adapter-windows.png)
 
 *Why: A shared NAT Network gives both guests internet access through the host and allows them to communicate with each other. Unlike a bridged adapter, it does not require the guests to appear as separate machines on the physical teaching network. NAT and NAT Network are different options: two guests on separate default NAT connections usually cannot reach each other directly. A NAT Network is not a security sandbox against all network threats, so use only disposable test data.*
 
@@ -166,7 +166,7 @@ ssh -p 2222 vita@127.0.0.1 "ip addr" > evidence/ip-addr-linux.txt
 ```
 Test Windows → Ubuntu:
 
-[tickets/ticket1-vm-build-doc/evidence/04-guest-uname-ubuntu.txt](evidence/04-guest-uname-ubuntu.txt)
+![](evidence/04-guest-uname-ubuntu.txt)
 
 2. In PowerShell on Windows, run:
 
@@ -175,7 +175,7 @@ ping <Ubuntu_IP>
 ```
 Replies come back immediately because Ubuntu's firewall is inactive by default.
 
-[tickets/ticket1-vm-build-doc/evidence/04-system-info-windows.txt](evidence/04-system-info-windows.txt)
+![](evidence/04-system-info-windows.txt)
 
 3. Test Ubuntu → Windows (and handle the firewall properly):
 
@@ -201,7 +201,7 @@ New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -Icmp
 
 **Expected result:** Ubuntu → Windows, Windows → Ubuntu, Ubuntu → internet, and Windows → internet each return successful replies with 0% packet loss.
 
-[tickets/ticket1-vm-build-doc/evidence/05-ping-between-guests.txt](evidence/05-ping-between-guests.txt) 
+![](evidence/05-ping-between-guests.txt) 
 
 *Why: Internet access does not automatically mean that two VMs can reach one another. Testing both directions confirms guest-to-guest connectivity, and using a targeted firewall rule ensures security is maintained rather than recklessly disabling protection.*
 
@@ -213,7 +213,7 @@ New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -Icmp
 4. Name it Ubuntu - Clean Installation and confirm.
 5. Check that it appears in the snapshot list.
 
-[tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-ubuntu.png](evidence/06-snapshot-list-ubuntu.png) 
+![](evidence/06-snapshot-list-ubuntu.png) 
 
 **Windows**
 1. Shut down lab02-windows normally.
@@ -222,7 +222,7 @@ New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -Icmp
 4. Name it Windows - Clean Installation and confirm.
 5. Check that it appears in the list.
 
-[tickets/ticket1-vm-build-doc/evidence/06-snapshot-list-windows.png](evidence/06-snapshot-list-windows.png)
+![](evidence/06-snapshot-list-windows.png)
 
 *Why: A snapshot records a recoverable VM state. If testing damages the guest configuration, the developer can revert to a clean state instead of reinstalling the OS. Snapshots are not a substitute for backups of important files.*
 
