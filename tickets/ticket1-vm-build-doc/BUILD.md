@@ -1,3 +1,10 @@
+## Prerequisites
+Before starting, you need to download and install the required tools:
+- **Oracle VirtualBox:** Download from the [official VirtualBox website](https://www.virtualbox.org/).
+- **Ubuntu ISO:** Download the Ubuntu LTS ISO image from the [Ubuntu releases page](https://releases.ubuntu.com/).
+- **Windows 11 ISO:** Download the Windows 11 Enterprise Evaluation ISO from the [Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-11-enterprise).
+
+
 ## Step 1. Creating Ubuntu and Windows Virtual Machines
 
 **Ubuntu VM**
@@ -10,7 +17,7 @@
 7. Keep the wizard open for the hardware and disk settings in Steps 2–3.
 
 [tickets/ticket1-vm-build-doc/evidence/01-new-vm-wizard-ubuntu.png](evidence/01-new-vm-wizard-ubuntu.png)
-
+![](evidence/01-new-vm-wizard-ubuntu.png)
 *Why: Ubuntu LTS provides a Linux environment for development and testing. Using the Ubuntu (64-bit) profile gives VirtualBox suitable starting defaults. Manual installation makes the process easier to explain and reproduce.*
 
 **Windows VM**
