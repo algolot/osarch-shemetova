@@ -26,6 +26,13 @@ myself? Thanks"
   - I assumed we need a dual-guest environment consisting of **Ubuntu Linux** and **Windows 11 Enterprise Evaluation** to cover multi-platform development and testing needs.
   - I assumed standard conservative resource allocations (4 GB RAM and 2 CPU cores per VM, with a 25 GB virtual disk) to fit comfortably within typical host limitations while keeping the host responsive.
   - I assumed a shared VirtualBox **NAT Network** configuration so both guests can access the internet and communicate directly with each other without violating physical campus network filtering rules.
+ 
+**Resource Calculations (Host Memory and Disk)**
+- Host Specifications: The host machine operates with 24,576 MB (~24 GB) of total system RAM and 16 logical processor cores.
+- Ubuntu VM Allocation: Allocated 4,096 MB RAM (~16.6% of host RAM) and 2 virtual CPUs (12.5% of host logical cores).
+- Windows VM Allocation: Allocated 4,096 MB RAM (~16.6% of host RAM) and 2 virtual CPUs (12.5% of host logical cores).
+- Simultaneous Running Impact: If both guests run at the same time, their combined memory usage is 8,192 MB (~8 GB, or ~33.3% of total host RAM). This leaves ~16,384 MB (~16 GB) of RAM free for the host OS and user applications, preventing performance degradation or swapping on the host.
+- Disk Space Impact: Both VMs use 25 GB VirtualBox Disk Image (VDI) drives with dynamic allocation enabled ("Pre-allocate Full Size" unchecked). The initial footprint on the host SSD is only a few gigabytes per guest, with maximum host storage usage capped at 50 GB as the drives expand.
 
 ## 3. What I did
 
