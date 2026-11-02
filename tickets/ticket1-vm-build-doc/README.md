@@ -35,16 +35,16 @@ myself? Thanks"
 - Disk Space Impact: Both VMs use 25 GB VirtualBox Disk Image (VDI) drives with dynamic allocation enabled ("Pre-allocate Full Size" unchecked). The initial footprint on the host SSD is only a few gigabytes per guest, with maximum host storage usage capped at 50 GB as the drives expand.
 
 **Non-Default Settings Table**
-*Below is a breakdown of every virtual machine setting that differs from the VirtualBox default profile, along with the technical justification:*
+*Below is a breakdown of every virtual machine setting that differs from the VirtualBox default profile, along with the technical justification and alternatives considered:*
 
-| Setting Area | VirtualBox Default | Configured Setting | Reason/Justification |
+| Setting Area | VirtualBox Default | Configured Setting | Reason/Justification (Alternative & Trade-off) |
 | :--- | :--- | :--- | :--- |
-| Unattended Install | Checked (Auto-install) | Unchecked (Manual setup) | Manual installation allows full control and explanation of installer prompts for documentation |
-| Base Memory (RAM)	| 2048 MB (Linux) / 4096 MB (Win) |	4096 MB for both VMs | Ensures usable GUI performance during labs without starving the 24 GB host system |
-| Processor Cores |	1 CPU Core | 2 CPUs for both VMs	| Prevents OS lag during compilation and package installation while using < 25% host cores |
-| Network Adapter |	NAT |	NAT Network |	Standard NAT isolates guests from each other. NAT Network allows inter-guest pinging and internet access behind host MAC filters |
-| Windows EFI & TPM 2.0 |	Default/Variable |	Enabled (EFI & TPM 2.0) |	Required by Windows 11 setup requirements to install properly without breaking security constraints |
-| Windows Defender Firewall |	Inbound ICMP Blocked |	Custom ICMPv4 Inbound Rule |	Enables ping diagnostic checks without dangerously turning off the firewall entirely |
+| **Unattended Install** | Checked (Auto-install) | **Unchecked (Manual setup)** | Manual installation allows full control and explanation of installer prompts for documentation. The alternative was automated installation, but it hides crucial configuration steps needed for a reproducible guide. |
+| **Base Memory (RAM)** | 2048 MB (Linux) / 4096 MB (Win) | **4096 MB for both VMs** | Ensures usable GUI performance during labs without starving the 24 GB host system. The alternative was to allocate 2048 MB RAM, but this causes severe lagging in Ubuntu and Windows 11 graphical environments; 4 GB was chosen as a trade-off to prioritize system responsiveness at the cost of a slightly smaller free memory pool on the host. |
+| **Processor Cores** | 1 CPU Core | **2 CPUs for both VMs** | Prevents OS lag during compilation and package installation while using < 25% host cores. The alternative of keeping 1 CPU resulted in bottlenecked boot times and sluggish updates. |
+| **Network Adapter** | NAT | **NAT Network** | Standard NAT isolates guests from each other. NAT Network allows inter-guest pinging and internet access behind host MAC filters. The alternative was a *Bridged Adapter*, but we rejected it because the Innotech network filters traffic by MAC address, which would block the guest machine. |
+| **Windows EFI & TPM 2.0** | Default/Variable | **Enabled (EFI & TPM 2.0)** | Required by Windows 11 setup requirements to install properly without breaking security constraints. Bypassing these requirements was considered, but it introduces instability and violates security baselines. |
+| **Windows Defender Firewall** | Inbound ICMP Blocked | **Custom ICMPv4 Inbound Rule** | Enables ping diagnostic checks without dangerously turning off the firewall entirely. The alternative of completely disabling the firewall made ping work but left the machine entirely exposed to network threats. |
 
 ## 3. What I did
 
