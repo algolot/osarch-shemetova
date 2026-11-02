@@ -36,8 +36,9 @@ myself? Thanks"
 
 **Non-Default Settings Table**
 *Below is a breakdown of every virtual machine setting that differs from the VirtualBox default profile, along with the technical justification:*
+
 | Setting Area | valueVirtualBox Default | Configured Setting | Reason/Justification |
-| :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | Unattended Install | Checked (Auto-install) | Unchecked (Manual setup) | Manual installation allows full control and explanation of installer prompts for documentation |
 | Base Memory (RAM)	| 2048 MB (Linux) / 4096 MB (Win) |	4096 MB for both VMs | Ensures usable GUI performance during labs without starving the 24 GB host system |
 | Processor Cores |	1 CPU Core | 2 CPUs for both VMs	| Prevents OS lag during compilation and package installation while using < 25% host cores |
