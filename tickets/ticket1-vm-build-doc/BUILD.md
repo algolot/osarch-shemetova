@@ -30,6 +30,8 @@ Before starting, you need to download and install the required tools:
 
 ![](evidence/01-new-vm-wizard-windows.png)
 
+*(Note for Windows 11: Windows 11 requires UEFI and TPM 2.0. Ensure that `Enable EFI` and `TPM Version 2.0` are checked under Settings → System → Motherboard before installation, rather than bypassing system requirements).*
+
 *Why: Windows provides a second operating-system environment for checking whether software behaves differently from Linux. The Enterprise Evaluation edition is intended for testing rather than permanent production use. Manual installation allows the user to verify each installer choice.*
 
 ## Step 2. Allocating RAM and CPU
@@ -222,6 +224,8 @@ New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -Icmp
 4. Name it Windows - Clean Installation and confirm.
 5. Check that it appears in the list.
 
+ *(How to roll back: Select the snapshot and click Restore to revert all changes made since the snapshot was taken).*
+
 ![](evidence/06-snapshot-list-windows.png)
 
 *Why: A snapshot records a recoverable VM state. If testing damages the guest configuration, the developer can revert to a clean state instead of reinstalling the OS. Snapshots are not a substitute for backups of important files.*
@@ -232,7 +236,6 @@ New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -Icmp
 2. Confirm that both can reach the internet and each other using the commands in Steps 6–7.
 3. Confirm that a clean-install snapshot exists for each guest.
 4. Keep the virtual disks, ISO files and local test credentials under the control of the person responsible for the machines. Do not publish passwords or sensitive test data.
-5. In the semester repository, put this guide at tickets/ticket1-vm-build-doc/BUILD.md and all screenshots and command outputs in its evidence/ folder.
-6. Open the Markdown file in GitHub and verify that every screenshot displays and that every evidence link works. A new user should be able to follow the guide without guessing about a missing menu or setting.
+5. Keep this BUILD.md guide and the evidence/ folder accessible so you can independently rebuild and verify the next development machine yourself.
 
-*Why: The handover is complete only when someone else can reproduce the machines and verify that they work. The separate README.md report must still explain the original request, its missing requirements and assumptions, the decisions made, the evidence, one real problem encountered and its resolution, and what could be improved next time.*
+*Why: The handover is complete only when someone else (such as the office manager) can successfully follow the guide to reproduce the machines and verify that they work.*
