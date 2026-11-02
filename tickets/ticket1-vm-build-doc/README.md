@@ -34,6 +34,17 @@ myself? Thanks"
 - Simultaneous Running Impact: If both guests run at the same time, their combined memory usage is 8,192 MB (~8 GB, or ~33.3% of total host RAM). This leaves ~16,384 MB (~16 GB) of RAM free for the host OS and user applications, preventing performance degradation or swapping on the host.
 - Disk Space Impact: Both VMs use 25 GB VirtualBox Disk Image (VDI) drives with dynamic allocation enabled ("Pre-allocate Full Size" unchecked). The initial footprint on the host SSD is only a few gigabytes per guest, with maximum host storage usage capped at 50 GB as the drives expand.
 
+**Non-Default Settings Table**
+*Below is a breakdown of every virtual machine setting that differs from the VirtualBox default profile, along with the technical justification:*
+| Setting Area | valueVirtualBox Default | Configured Setting | Reason/Justification |
+| :--- | :--- | :--- |
+| Unattended Install | Checked (Auto-install) | Unchecked (Manual setup) | Manual installation allows full control and explanation of installer prompts for documentation |
+| Base Memory (RAM)	| 2048 MB (Linux) / 4096 MB (Win) |	4096 MB for both VMs | Ensures usable GUI performance during labs without starving the 24 GB host system |
+| Processor Cores |	1 CPU Core | 2 CPUs for both VMs	| Prevents OS lag during compilation and package installation while using < 25% host cores |
+| Network Adapter |	NAT |	NAT Network |	Standard NAT isolates guests from each other. NAT Network allows inter-guest pinging and internet access behind host MAC filters |
+| Windows EFI & TPM 2.0 |	Default/Variable |	Enabled (EFI & TPM 2.0) |	Required by Windows 11 setup requirements to install properly without breaking security constraints |
+| Windows Defender Firewall |	Inbound ICMP Blocked |	Custom ICMPv4 Inbound Rule |	Enables ping diagnostic checks without dangerously turning off the firewall entirely |
+
 ## 3. What I did
 
 1. **Prepared Virtual Machines:** Created two separate virtual machines (`lab01-ubuntu` and `lab02-windows`) in Oracle VirtualBox following manual configuration steps rather than unattended installation to maintain full control over each installer choice.
