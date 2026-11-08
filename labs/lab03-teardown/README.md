@@ -84,13 +84,13 @@ What this build still needs: A PC case (chassis), a discrete graphics card (GPU)
 
 | Fact | Windows (PowerShell) | Linux (Ubuntu VM) | macOS |
 |---|---|---|---|
-| CPU model | AMD Ryzen 7 7435HS (`Get-CimInstance Win32_Processor`) | AMD Ryzen 7 7435HS (`lscpu`) | — |
-| Cores / threads | 8 cores / 16 threads (`Get-CimInstance Win32_Processor`) | 2 virtual CPUs / 2 threads (`lscpu`) | — |
-| Total memory | 24 GB (`Get-CimInstance Win32_PhysicalMemory`) | 956 MiB usable (~1 GiB assigned) (`free -h`) | — |
-| Memory modules and speed | 2 × 12 GB, DDR5, 4800 MT/s (`Get-CimInstance Win32_PhysicalMemory`) | Not reported by VM (`sudo dmidecode -t memory`) | — |
-| Disk model and type | Micron MTFDKCD512QFM-1BD1AABLA, 512 GB NVMe SSD (`Get-PhysicalDisk`) | VBOX HARDDISK, 25 GB virtual SATA disk (`lsblk`) | — |
-| Free space | 45.71 GB (`Get-Volume C`) | 20 GB (`df -h /`) | — |
-| Architecture (x86-64 / ARM64) | AMD64 / x86-64 (`$env:PROCESSOR_ARCHITECTURE`) | x86_64 (`uname -m`) | — |
+| CPU model | AMD Ryzen 7 7435HS (`Get-CimInstance Win32_Processor`) | AMD Ryzen 7 7435HS (`lscpu`) | Apple M5 (`sysctl -n machdep.cpu.brand_string`) |
+| Cores / threads | 8 cores / 16 threads (`Get-CimInstance Win32_Processor`) | 2 virtual CPUs / 2 threads (`lscpu`) | 10 physical / 10 logical (`sysctl hw.physicalcpu hw.logicalcpu`) |
+| Total memory | 24 GB (`Get-CimInstance Win32_PhysicalMemory`) | 956 MiB usable (~1 GiB assigned) (`free -h`) | 16 GB (`sysctl hw.memsize`) |
+| Memory modules and speed | 2 × 12 GB, DDR5, 4800 MT/s (`Get-CimInstance Win32_PhysicalMemory`) | Not reported by VM (`sudo dmidecode -t memory`) | 16 GB LPDDR5, Micron (Unified, on-package) (`system_profiler SPMemoryDataType`) |
+| Disk model and type | Micron MTFDKCD512QFM-1BD1AABLA, 512 GB NVMe SSD (`Get-PhysicalDisk`) | VBOX HARDDISK, 25 GB virtual SATA disk (`lsblk`) | APPLE SSD AP0512Z, 500.3 GB SSD (Apple Fabric) (`diskutil info disk0`) |
+| Free space | 45.71 GB (`Get-Volume C`) | 20 GB (`df -h /`) | Not queried / Part of APFS container |
+| Architecture (x86-64 / ARM64) | AMD64 / x86-64 (`$env:PROCESSOR_ARCHITECTURE`) | x86_64 (`uname -m`) | arm64 (`uname -m`) |
 
 *Windows reports the physical hardware of the host laptop, while Ubuntu runs inside a virtual machine and reports the resources allocated to it. For example, Windows detects 8 CPU cores, 16 threads, and 24 GB of RAM, whereas Ubuntu shows only 2 virtual CPUs and approximately 1 GiB of RAM. The hypervisor passes through the CPU model and x86-64 architecture but presents a virtual SATA disk instead of the physical NVMe SSD and does not expose the real memory module specifications*
 
