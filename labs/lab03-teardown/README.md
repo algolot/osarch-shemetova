@@ -75,7 +75,7 @@ What this build still needs: A PC case (chassis) to house the components, a dedi
 | **Motherboard** | MSI PRO B760M-A WIFI DDR4 | Provides the LGA1700 socket for the Intel CPU and physical DDR4 memory slots matching the Crucial RAM module. |
 | **Memory** | Crucial DDR4-3200 16 GB DIMM | Inserts into the motherboard's DDR4 DIMM slots, aligning with the board's strict DDR4 memory architecture. |
 | **Storage** | Samsung 870 EVO 1 TB | Connects via a 7-pin SATA data cable to the motherboard's SATA ports and a SATA power connector from the PSU. |
-| **PSU** | *(Shared or second PSU required)* | *Note:* In a dual-build lab scenario where both systems run concurrently, a second power supply unit is required as only one Corsair RM750e is provided in the parts list. |
+| **PSU** | Intel Laminar RM1 | Mounts directly onto the Intel Core i5-13400 using the LGA1700 socket mounting holes. It is included with the processor and provides sufficient cooling for its standard 65W base power consumption. |
 | **Cooler** | Intel Laminar RM1 (Stock) | Comes included with the Intel processor and mounts onto the LGA1700 socket holes to handle basic thermal loads. |
 
 What this build still needs: A PC case (chassis), a discrete graphics card (GPU), a SATA data cable to connect the 870 EVO SSD to the board, and a second power supply unit if both computers are to be powered on simultaneously.
