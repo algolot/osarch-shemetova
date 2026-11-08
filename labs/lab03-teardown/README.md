@@ -5,42 +5,52 @@ Pair: <name> + <name> · Date: <date>
 ## Part 1 — Ten parts
 ### AMD Ryzen 5 7600
 ![](evidence/photos/ryzen5-7600.jpg)
-<Caption: Desktop Central Processing Unit (CPU) featuring 6 cores and 12 threads based on Zen 4 architecture. Connects directly to an AMD Socket AM5 (LGA1718) motherboard socket and relies on dual-channel DDR5 system memory. Limit: Requires an AM5 motherboard and DDR5 RAM only (incompatible with AM4 and DDR4); does not support legacy socket architectures. Ships with an included AMD Wraith Stealth stock cooler>  — Source: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
+
+Caption: Desktop Central Processing Unit (CPU) featuring 6 cores and 12 threads based on Zen 4 architecture. Connects directly to an AMD Socket AM5 (LGA1718) motherboard socket and relies on dual-channel DDR5 system memory. Limit: Requires an AM5 motherboard and DDR5 RAM only (incompatible with AM4 and DDR4); does not support legacy socket architectures. Ships with an included AMD Wraith Stealth stock cooler  — Source: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
 
 ### Intel Core i5-13400
 ![](evidence/photos/i5-13400.jpg)
+
 Caption: Desktop Central Processing Unit (CPU) with 10 cores (6 Performance-cores + 4 Efficient-cores) and 16 threads based on Raptor Lake architecture. Connects to an Intel LGA1700 CPU socket and supports both DDR4 and DDR5 memory controllers. Limit: Restricted to LGA1700 motherboards (Intel 600/700 series chipsets); cannot fit older LGA1200 or AMD platforms. Includes an Intel Laminar RM1 stock cooler in the box — Source: <https://www.intel.com/content/www/us/en/products/sku/230495/intel-core-i513400-processor-20m-cache-up-to-4-60-ghz/specifications.html>
 
 ### ASUS PRIME B650M-A
 ![](evidence/photos/asus-prime-b650m-a.jpg)
+
 Caption: Micro-ATX Motherboard built on the AMD B650 chipset featuring an LGA1718 (Socket AM5) CPU socket. Connects the CPU, up to 4 DDR5 DIMM slots, PCIe 4.0 expansion cards, M.2 NVMe SSDs, SATA drives, and 24-pin ATX + 8-pin EPS power cables from the PSU. Limit: Supports AMD Ryzen 7000, 8000, and 9000 Series desktop processors only; strictly incompatible with DDR4 RAM and Intel CPUs — Source: <https://www.asus.com/ru/motherboards-components/motherboards/prime/prime-b650m-a/>
 
 ### MSI PRO B760M-A WIFI DDR4
 ![](evidence/photos/msi-pro-b760m-a-wifi-ddr4.jpg)
+
 Caption: Micro-ATX Motherboard based on the Intel B760 chipset with an LGA1700 CPU socket. Connects the processor, up to 4 DDR4 DIMM slots, PCIe 4.0 expansion slots, M.2 PCIe SSDs, SATA 6Gb/s drives, and system power inputs. Limit: Supports 12th, 13th, and 14th Gen Intel Core, Pentium Gold, and Celeron processors only; strictly requires DDR4 memory and physically cannot fit DDR5 RAM — Source: <https://www.msi.com/Motherboard/PRO-B760M-A-WIFI-DDR4>
 
 ### Kingston FURY Beast DDR5-5600 16 GB
 ![](evidence/photos/kingston-fury-beast-ddr5.jpg)
+
 Caption: 288-pin DDR5 Unbuffered DIMM desktop memory module operating at up to 5600 MT/s. Connects to a standard desktop DDR5 DIMM slot on compatible motherboards. Limit: Incompatible with DDR4 DIMM slots due to physical key notch placement and onboard PMIC voltage routing; requires a DDR5-compatible motherboard and CPU memory controller — Source: <https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr5-memory>
 
 ### Crucial DDR4-3200 16 GB DIMM
 ![](evidence/photos/crucial-ddr4-3200.jpg)
+
 Caption: 288-pin DDR4 Unbuffered DIMM desktop memory module running at 3200 MT/s at 1.2V. Connects to a 288-pin desktop DDR4 DIMM motherboard slot, operating one channel per DIMM populated. Limit: Incompatible with DDR5 motherboard slots and laptop SO-DIMM slots due to pin configuration and physical keying — Source: <https://www.crucial.com/memory/ddr4/ct16g4dfra32a?srsltid=AYCX9vLeuw52nxa7it1TjmrxL-ATlP7sY5qVWvlIg2TSyvS6mL5YXLde>
 
 ### Samsung 990 PRO 1 TB
 ![](evidence/photos/samsung-990-pro.jpg)
+
 Caption: M.2 2280 form-factor Solid State Drive using the NVMe 2.0 protocol over a PCIe 4.0 x4 interface. Connects directly to an M.2 PCIe (M-Key) slot on the motherboard. Limit: Requires an M.2 slot with PCIe support to operate (not compatible with SATA-only M.2 slots or 2.5-inch drive bays); backward compatible with PCIe 3.0 but capped at lower bandwidth — Source: <https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/>
 
 ### Samsung 870 EVO 1 TB
 ![](evidence/photos/samsung-870-evo.jpg)
+
 Caption: 2.5-inch form-factor Solid State Drive operating on the SATA III 6 Gbps interface. Connects to the motherboard via a 7-pin SATA data cable and to the power supply via a 15-pin SATA power connector. Limit: Maximum sequential transfer speed is bottlenecked by the SATA III interface limit (~560 MB/s); cannot fit directly into M.2 motherboard slots — Source: <https://www.samsung.com/kz_ru/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0bw/?srsltid=AYCX9vKHZFU8BT7usonrGMq3BarVfOHFUTJpNJ5-uMEdcAgU9EJjGaRF>
 
 ### Corsair RM750e (750 W)
 ![](evidence/photos/corsair-rm750e.jpg)
+
 Caption: 750-Watt Fully Modular ATX Power Supply Unit (PSU) with 80 PLUS Gold certification. Connects to wall AC power and distributes DC power to system components via modular internal cables (24-pin ATX, 8-pin EPS/CPU, PCIe graphics connectors, and SATA power cables). Limit: Constrained by standard ATX chassis form-factor dimensions and a maximum total continuous power delivery budget of 750 W — Source: <https://www.corsair.com/ww/ru/p/psu/cp-9020248-ww/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020248-ww?srsltid=AYCX9vKGf1MkNxeOWwpJd4E-JyLPDFzJcrbqqsu6VT9euagUU92Y4NHm>
 
 ### Stock CPU Coolers (AMD Wraith Stealth / Intel Laminar RM1)
 ![](evidence/photos/stock-coolers.jpg)
+
 Caption: Low-profile air CPU coolers with pre-applied thermal interface material and a 4-pin PWM fan connector. Connects directly to the CPU socket retention mechanism/mounting holes on the motherboard and plugs into the 4-pin CPU_FAN header. Limit: Designed only for thermal loads up to ~65W TDP CPUs (comes bundled in-box with Ryzen 5 7600 and Core i5-13400); incompatible with cross-platform mounting patterns without dedicated bracket adapters — Source: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
 
 
