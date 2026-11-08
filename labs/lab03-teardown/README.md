@@ -92,7 +92,7 @@ What this build still needs: A PC case (chassis), a discrete graphics card (GPU)
 | Free space | 45.71 GB (`Get-Volume C`) | 20 GB (`df -h /`) | Not queried / Part of APFS container |
 | Architecture (x86-64 / ARM64) | AMD64 / x86-64 (`$env:PROCESSOR_ARCHITECTURE`) | x86_64 (`uname -m`) | arm64 (`uname -m`) |
 
-*Windows reports the physical hardware of the host laptop, while Ubuntu runs inside a virtual machine and reports the resources allocated to it. For example, Windows detects 8 CPU cores, 16 threads, and 24 GB of RAM, whereas Ubuntu shows only 2 virtual CPUs and approximately 1 GiB of RAM. The hypervisor passes through the CPU model and x86-64 architecture but presents a virtual SATA disk instead of the physical NVMe SSD and does not expose the real memory module specifications*
+*Windows reports the physical hardware of the host laptop, while Ubuntu runs inside a virtual machine and reports the resources allocated to it. For example, Windows detects 8 CPU cores, 16 threads, and 24 GB of RAM, whereas Ubuntu shows only 2 virtual CPUs and approximately 1 GiB of RAM. The hypervisor passes through the CPU model and x86-64 architecture but presents a virtual SATA disk instead of the physical NVMe SSD and does not expose the real memory module specifications. In contrast, macOS runs natively on Apple Silicon (M5 arm64), exposing unified on-package LPDDR5 memory and an internal Apple Fabric storage controller directly.*
 
 ## What did not work the first time
 - At first i couldn't get the dmidecode report. When I tried to retrieve the output of this command via SSH, it couldn't be accessed because an additional password was required. To resolve this, I logged into Ubuntu via an interactive SSH session and obtained the result from there by running these commands:
@@ -105,6 +105,7 @@ scp -P 2222 vita@127.0.0.1:dmidecode-output.txt dmidecode-output.txt
 - [evidence/windows-specs.txt](evidence/windows-specs.txt) — Raw text output of hardware specifications and disk metrics captured via PowerShell commands (`Get-CimInstance`, `Get-PhysicalDisk`, etc.) on Windows.
 - [evidence/linux-specs.txt](evidence/linux-specs.txt) — Raw text output of system, CPU, memory, and disk specifications (`lscpu`, `free -h`, `lsblk`, `df -h`) captured inside the Ubuntu Linux virtual machine.
 - [evidence/dmidecode-output.txt](evidence/dmidecode-output.txt) — Raw memory device specifications exported via `sudo dmidecode -t memory` on the Ubuntu VM (showing virtualized SMBIOS constraints).
+- [evidence/macos-specs.txt](evidence/macos-specs.txt) — Raw text output of hardware specifications, unified memory, and storage details captured via native utilities (`sysctl`, `system_profiler`, `diskutil`) on macOS.
 - [evidence/photos/ryzen5-7600.jpg](evidence/photos/ryzen5-7600.jpg) — Official maker photo and visual reference for the AMD Ryzen 5 7600 processor.
 - [evidence/photos/i5-13400.jpg](evidence/photos/i5-13400.jpg) — Official maker photo and visual reference for the Intel Core i5-13400 processor.
 - [evidence/photos/asus-prime-b650m-a.jpg](evidence/photos/asus-prime-b650m-a.jpg) — Official maker photo and layout reference for the ASUS PRIME B650M-A motherboard.
