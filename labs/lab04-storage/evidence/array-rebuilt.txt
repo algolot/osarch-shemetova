@@ -1,0 +1,55 @@
+PS C:\Users\Vita\Desktop\osarch-shemetova\labs\lab04-storage\evidence> ssh -t -p 2222 vita@127.0.0.1 "cat /proc/mdstat; sudo mdadm --detail /dev/md0; lsblk -f"
+vita@127.0.0.1's password:
+Personalities : [raid1]
+md0 : active raid1 sdd1[2] sdb1[0]
+      2093056 blocks super 1.2 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+[sudo: authenticate] Password:
+/dev/md0:
+           Version : 1.2
+     Creation Time : Fri Nov 13 06:41:38 2026
+        Raid Level : raid1
+        Array Size : 2093056 (2044.00 MiB 2143.29 MB)
+     Used Dev Size : 2093056 (2044.00 MiB 2143.29 MB)
+      Raid Devices : 2
+     Total Devices : 2
+       Persistence : Superblock is persistent
+
+     Intent Bitmap : Internal
+
+       Update Time : Fri Nov 13 07:37:11 2026
+             State : clean
+    Active Devices : 2
+   Working Devices : 2
+    Failed Devices : 0
+     Spare Devices : 0
+
+Consistency Policy : bitmap
+
+              Name : lab01-ubuntu:0  (local to host lab01-ubuntu)
+              UUID : 5367de13:081e8fe6:74d9bad6:43124cec
+            Events : 41
+
+    Number   Major   Minor   RaidDevice State
+       0       8       17        0      active sync   /dev/sdb1
+       2       8       49        1      active sync   /dev/sdd1
+NAME    FSTYPE            FSVER LABEL          UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+loop0   squashfs          4.0                                                             0   100% /snap/hwctl/123
+loop1   squashfs          4.0                                                             0   100% /snap/core24/1643
+loop2   squashfs          4.0                                                             0   100% /snap/hwctl/131
+loop3   squashfs          4.0                                                             0   100% /snap/snapd/27710
+sda
+├─sda1
+└─sda2  ext4              1.0                  13c0b89e-e028-42f3-9e11-4382e49a637c   18.8G    18% /
+sdb
+└─sdb1  linux_raid_member 1.2   lab01-ubuntu:0 5367de13-081e-8fe6-74d9-bad643124cec
+  └─md0 ext4              1.0                  9a6e0fcd-bade-474a-8a3c-4a7083ed12b9    1.8G     0% /mnt/raid1
+sdc
+└─sdc1  linux_raid_member 1.2   lab01-ubuntu:0 5367de13-081e-8fe6-74d9-bad643124cec
+sdd
+└─sdd1  linux_raid_member 1.2   lab01-ubuntu:0 5367de13-081e-8fe6-74d9-bad643124cec
+  └─md0 ext4              1.0                  9a6e0fcd-bade-474a-8a3c-4a7083ed12b9    1.8G     0% /mnt/raid1
+sr0
+Connection to 127.0.0.1 closed.
