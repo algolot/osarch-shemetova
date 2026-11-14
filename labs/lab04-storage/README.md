@@ -1,6 +1,6 @@
-# Lab 4 —  Partition, mirror, fail, recove
+# Lab 4 —  Partition, mirror, fail, recoveк
 shemetova
-Machine: Windows 11 Pro (AMD Ryzen 7 7435HS, 24 GB RAM, 512 GB SSD), guests Ubuntu Server 26.04.1 LTS + Windows 11 Enterprise eval Date: <31.10.2026>
+Machine: Windows 11 Pro (AMD Ryzen 7 7435HS, 24 GB RAM, 512 GB SSD), guests Ubuntu Server 26.04.1 LTS + Windows 11 Enterprise eval
 Date: 14.11.2026
 
 ## What I did
@@ -8,7 +8,7 @@ Date: 14.11.2026
 ### 1. Windows Guest Partitioning
 * Attached an additional 2 GB virtual disk (`lab02-windows_1.vdi`) to the `lab02-windows` VM in VirtualBox.
 * Initialized the new disk in **Disk Management** using the **GPT** (GUID Partition Table) partition style, matching the UEFI boot configuration of the primary OS disk and supporting modern volume management.
-* Created a new simple volume spanning the entire disk, formatted it with **NTFS**, labeled it `Data`, and assigned it the drive letter **`E:`**.
+* Created a new simple volume spanning the entire disk, formatted it with **NTFS**, labeled it `LAB04`, and assigned it the drive letter **`E:`**.
 
 ### 2. Linux Guest RAID 1 Setup & Testing
 * Attached three additional 2 GB virtual disks (`/dev/sdb`, `/dev/sdc`, and `/dev/sdd`) to `lab01-ubuntu` in VirtualBox while keeping the 25 GB system disk (`/dev/sda`) untouched.
@@ -30,7 +30,7 @@ Date: 14.11.2026
 
 | Stage | Target / RAID Members | State | Available Data / Details |
 | :--- | :--- | :--- | :--- |
-| **Windows Disk** | Disk 1 (`lab02-windows_1.vdi`) | Online / Healthy | GPT, NTFS, Drive `E:` (`Data`), 2 GB |
+| **Windows Disk** | Disk 1 (`lab02-windows_1.vdi`) | Online / Healthy | GPT, NTFS, Drive `E:` (`LAB04`), 2 GB |
 | **Before RAID** | `/dev/sdb`, `/dev/sdc` raw; `/dev/sdd` spare | Not created | System disk `/dev/sda` only |
 | **Healthy** | `/dev/sdb1` + `/dev/sdc1` | `[2/2] [UU]` (`clean`) | `/dev/md0` (`ext4`) mounted at `/mnt/raid1` |
 | **Degraded** | `/dev/sdb1` active; `/dev/sdc1` faulty | `[2/1] [U_]` (`degraded`) | `test.txt` readable, checksum intact |
