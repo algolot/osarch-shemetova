@@ -51,11 +51,8 @@ No, RAID 1 will not help recover a file that a colleague accidentally deleted an
 ---
 
 ## Troubleshooting & Notes
-
-* **VM Unresponsiveness:** Ubuntu briefly froze during initial disk preparation; I rebooted the guest and re-verified partition tables before proceeding.
-* **Device Naming Typo:** I initially passed `/dev/sdb2` instead of `/dev/sdb1` to `mdadm --create`, which failed with a missing device error until corrected.
-* **Flag Syntax Error:** When adding the replacement drive, I typed `-add` instead of `--add`, triggering a syntax error that was resolved by using the double-dash flag.
-* **Evidence Collection:** Used SSH from Windows PowerShell (`ssh -p 2222 vita@127.0.0.1`) and `Compare-Object` to capture command outputs directly into the host repository and verify checksum integrity.
+- Ubuntu froze during initial disk preparation; I rebooted the guest and re-verified partition tables before proceeding.
+- I made some typos: passed `/dev/sdb2` instead of `/dev/sdb1` to `mdadm --create`, typed `-add` instead of `--add`
 
 ---
 
