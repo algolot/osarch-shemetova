@@ -12,13 +12,12 @@ Name: shemetova · Date: 14.11.2026 · Tools: Git Bash / PowerShell
 - First 16 bytes: 49 44 3B D4 E0 EC E8 EB E8 FF 3B C8 EC FF 3B CE (evidence/hexdump-before.txt).
 - Encoding: KZ-1048 (RK1048) - because Cyrillic characters were encoded as single bytes. For example, A3 represents "Ә" and B3 represents "і". Decoding with RK1048 displayed "Әбдірахманова" correctly, while Windows-1251 produced incorrect characters.
 - Line ending: CRLF - because the hexadecimal dump contained 0D 0A at the end of the first line.
-- BOM: No - because the file started with 49 44 3B ("ID;"), which does not match any BOM signature.
+- BOM: No — because the original file started with 49 44 3B ("ID;"), which does not match any BOM signature. In the fixed file, I added a UTF-8 BOM (EF BB BF) to improve compatibility with Microsoft Excel and help it automatically recognize UTF-8.
 
 ## Fix
 - I created fix.sh to convert the original file from RK1048 to UTF-8 with BOM on git bash
 
 ```bash
-#!/bin/sh
 #!/bin/sh
 # Lab 5: Convert RK1048 to UTF-8
 set -e
@@ -45,7 +44,7 @@ sh scripts/fix.sh
 - Data integrity: I used a round-trip conversion to compare the corrected file with the original after converting it back to RK1048 and removing the BOM.
 - Excel: the corrected CSV was imported using UTF-8 encoding and the semicolon separator.
 - LibreOffice: the corrected CSV was opened using UTF-8 encoding and the semicolon separator.
-- Powershell: The corrected file was displayed using the cat command in Git Bash.
+- Powershell terminal: The corrected file was displayed using the cat command.
 
 ## What did not work the first time
 
