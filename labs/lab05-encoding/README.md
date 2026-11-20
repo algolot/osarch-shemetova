@@ -11,8 +11,9 @@ Name: shemetova · Date: 14.11.2026 · Tools: Git Bash / PowerShell
 - file said: Non-ISO extended-ASCII text, with CRLF line terminators (evidence/file-before.txt).
 - First 16 bytes: 49 44 3B D4 E0 EC E8 EB E8 FF 3B C8 EC FF 3B CE (evidence/hexdump-before.txt).
 - Encoding: KZ-1048 (RK1048) - because Cyrillic characters were encoded as single bytes. For example, A3 represents "Ә" and B3 represents "і". Decoding with RK1048 displayed "Әбдірахманова" correctly, while Windows-1251 produced incorrect characters.
-- Line ending: CRLF - because the hexadecimal dump contained 0D 0A at the end of the first line.
+- Line ending: CRLF — because the hexadecimal dump contained 0D 0A at the end of the first line. I decided to preserve CRLF because the original file already used Windows-style line endings, and the CSV was intended to be opened in Microsoft Excel on Windows. Changing the line endings was unnecessary for fixing the encoding and could introduce additional compatibility issues.
 - BOM: No — because the original file started with 49 44 3B ("ID;"), which does not match any BOM signature. In the fixed file, I added a UTF-8 BOM (EF BB BF) to improve compatibility with Microsoft Excel and help it automatically recognize UTF-8.
+- Separator: Semicolon (;) — because the hexadecimal dump showed the byte 3B between fields. I preserved the semicolon separator because it was part of the original CSV structure, and changing it was unnecessary for correcting the character encoding.
 
 ## Fix
 - I created fix.sh to convert the original file from RK1048 to UTF-8 with BOM on git bash
