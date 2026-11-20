@@ -1,17 +1,10 @@
 # Lab 6 — Live processes and memory pressure
 
-Pair: <name> + <name> · Date: <date> · Guests: <Ubuntu version / Windows edition, RAM of each>
+shemetova · Date: 20.11.2026 · Guests: Host: Windows 11 Pro (24 GB RAM)  
+Guest: Ubuntu Server 26.04.1 LTS (956 MiB RAM, 0 B swap)
 
 ## Part 1 — One process, three tools
-Process chosen: <name> — why: <one sentence>
-## Part 1 — One Process, Three Tools
-
-I examined a Python process on Windows 11 and Ubuntu Server
-26.04.1 LTS using Task Manager, Process Explorer, and htop.
-
-The same Python command was used on both operating systems:
-
-python -c "import time; data = bytearray(50 * 1024 * 1024); print('Process started'); time.sleep(600)"
+Process chosen: Python (python.exe / python3) — I chose Python because it runs on both Windows and Ubuntu, allowing me to compare how different operating systems and monitoring tools report process information.
 
 | Parameter | Task Manager (Windows) | Process Explorer (Windows) | htop (Ubuntu) |
 |---|---|---|---|
