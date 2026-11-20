@@ -1,0 +1,118 @@
+=== BEFORE STRESS TEST ===
+
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       214Mi       420Mi       1.1Mi       342Mi       741Mi
+Swap:             0B          0B          0B
+vita@lab01-ubuntu:~$ stress-ng --version
+stress-ng, version 0.20.01 (gcc 15.2.0, x86_64 Linux 7.0.0-43-generic) 💻🔥
+vita@lab01-ubuntu:~$ swapon --show
+vita@lab01-ubuntu:~$
+
+
+=== STRESS TEST — 256 MiB ===
+
+vita@lab01-ubuntu:~$ stress-ng --vm 1 --vm-bytes 256M --vm-keep --timeout 30s --metrics-brief
+stress-ng: info:  [1662] setting to a 30 secs run per stressor
+stress-ng: info:  [1662] dispatching hogs: 1 vm
+stress-ng: info:  [1662] note: system has only 392 MB of free memory and swap, recommend using --oom-avoid
+stress-ng: info:  [1663] vm: using 256MB per stressor instance (total 256MB of 392.53MB available memory)
+stress-ng: metrc: [1662] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: metrc: [1662]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: metrc: [1662] vm              1462419     30.12     27.88      2.23     48552.49       48561.37
+stress-ng: info:  [1662] skipped: 0
+stress-ng: info:  [1662] passed: 1: vm (1)
+stress-ng: info:  [1662] failed: 0
+stress-ng: info:  [1662] metrics untrustworthy: 0
+stress-ng: info:  [1662] successful run completed in 30.12 secs
+
+
+=== DURING STRESS TEST ===
+
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       481Mi       130Mi       1.3Mi       365Mi       474Mi
+Swap:             0B          0B          0B
+
+
+=== AFTER STRESS TEST ===
+
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       209Mi       402Mi       1.1Mi       365Mi       746Mi
+Swap:             0B          0B          0B
+
+
+=== KERNEL LOG CHECK  ===
+
+vita@lab01-ubuntu:~$ sudo journalctl -k -b --no-pager | grep -Ei 'out of memory|oom-killer|killed process'
+[sudo: authenticate] Password:
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       210Mi       400Mi       1.1Mi       366Mi       745Mi
+Swap:             0B          0B          0B
+vita@lab01-ubuntu:~$
+
+
+=== STRESS TEST — 512 MiB ===
+
+vita@lab01-ubuntu:~$ stress-ng --vm 1 --vm-bytes 512M --vm-keep --timeout 30s --metrics-brief
+stress-ng: info:  [1735] setting to a 30 secs run per stressor
+stress-ng: info:  [1735] dispatching hogs: 1 vm
+stress-ng: info:  [1735] note: system has only 400 MB of free memory and swap, recommend using --oom-avoid
+stress-ng: info:  [1736] vm: using 512MB per stressor instance (total 512MB of 400.09MB available memory)
+stress-ng: metrc: [1735] stressor       bogo ops real time  usr time  sys time   bogo ops/s     bogo ops/s
+stress-ng: metrc: [1735]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: metrc: [1735] vm              2920624     30.25     28.78      1.46     96554.84       96576.57
+stress-ng: info:  [1735] skipped: 0
+stress-ng: info:  [1735] passed: 1: vm (1)
+stress-ng: info:  [1735] failed: 0
+stress-ng: info:  [1735] metrics untrustworthy: 0
+stress-ng: info:  [1735] successful run completed in 30.25 secs
+
+
+
+=== DURING 512 MiB TEST ===
+
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       723Mi        11Mi       1.3Mi       242Mi       232Mi
+Swap:             0B          0B          0B
+
+
+=== AFTER 512 MiB TEST ===
+
+vita@lab01-ubuntu:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       211Mi       588Mi       1.1Mi       177Mi       744Mi
+Swap:             0B          0B          0B
+
+
+=== KERNEL LOG CHECK ===
+
+vita@lab01-ubuntu:~$ sudo journalctl -k -b --no-pager | grep -Ei 'out of memory|oom-killer|killed process'
+[sudo: authenticate] Password:
+vita@lab01-ubuntu:~$
+
+
+=== CONTROLLED OOM KILLER TEST ===
+
+vita@lab01-ubuntu:~$ sudo systemd-run --scope -p MemoryMax=128M -p OOMPolicy=continue stress-ng --vm 1 --vm-bytes 256M --vm-keep --oomable --timeout 15s
+Running as unit: run-p1826-i956.scope; invocation ID: 4a508f1aab8342a79c186d74ae3b625a
+stress-ng: info:  [1826] setting to a 15 secs run per stressor
+stress-ng: info:  [1826] dispatching hogs: 1 vm
+stress-ng: info:  [1826] note: system has only 480 MB of free memory and swap, recommend using --oom-avoid
+stress-ng: info:  [1828] vm: using 256MB per stressor instance (total 256MB of 480.35MB available memory)
+stress-ng: warn:  [1828] vm: WARNING: finished prematurely after just 0.68 sec
+stress-ng: info:  [1826] skipped: 0
+stress-ng: info:  [1826] passed: 1: vm (1)
+stress-ng: info:  [1826] failed: 0
+stress-ng: info:  [1826] metrics untrustworthy: 0
+stress-ng: info:  [1826] successful run completed in 0 secs
+
+
+=== MEMORY STATUS AFTER OOM TEST ===
+
+               total        used        free      shared  buff/cache   available
+Mem:           956Mi       209Mi       486Mi       1.1Mi       281Mi       746Mi
+Swap:             0B          0B          0B

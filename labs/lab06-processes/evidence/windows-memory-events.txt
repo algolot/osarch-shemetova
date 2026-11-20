@@ -1,0 +1,10 @@
+PS C:\Users\Vita> Get-WinEvent -FilterHashtable @{
+>>     LogName = 'System'
+>>     ProviderName = 'Microsoft-Windows-Resource-Exhaustion-Detector'
+>> } -MaxEvents 10 | Format-List TimeCreated, Id, Message
+Get-WinEvent : Не удалось найти события, соответствующие указанному условию выбора.
+строка:1 знак:1
++ Get-WinEvent -FilterHashtable @{
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception
+    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand

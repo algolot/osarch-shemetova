@@ -1,0 +1,53 @@
+# CHeckpoint 1 - Vitalina Shemetova - CYB26-6 - 19.11.2026
+
+## Task 1 - Card A
+1) Host has 8GB RAM, Windows guest requires 4GB RAM and Ubuntu 2GB RAM. 4GB+2GB=6GB for the VMs. However, host's Windows still requires 4GB at least, and its only 2GB left. Still, it will work as the resources will be spread between the host and guests.
+2) I would upgrade RAM first as it has one more free slot. Another 8GB DDR4 RAM can be added to improve the performance so the virtual machines won't take all of the RAM. The processor architecture used in the PC is 6 cores threads based on Zen 4 architecture.
+3) 
+| what | Given Host | My PC | Which is better |
+| :--- | :--- | :--- | :--- |
+|CPU| Intel Core i5-12400|AMD Ryzen 7 7435HS| My is better because of more cores and threads and etc, but my CPU is for laptops and the given host's is for Desktop so it might be unfair to compare|
+|core count|6|8| My PC has greater core count so it allows more efficient work|
+|thread count|12|16| My PC has greater threads count so it allows more efficient work|
+|total memory|8GB|24GB|  My PC has greater RAM it allows more smoother work and ran more processes at one time|
+|disk|256GB NVMe SSD + 1TB 7200 rpm HDD| 512 GB NVMe SSD| My SSD is greater but the given host has additional 1 TB HDD so the general memory is greater for it|
+|OS|Windows 11 Pro| Windows 11 Pro| same|
+
+## Task 2 - Variant 2
+## What I did
+1. Opened Ubuntu Server on VirtualBox
+2. Took a snapshot
+3. Changed it by creating a new file "KMS"
+4. Restored the snapshot
+5. Checked if the file is still here using ncdu
+
+
+
+
+
+## Task 3 - Case 1
+Symptom: Both guests have Internet, but can't reach each other
+
+| # | Evidence | What it shows | What I conclude / rule out | Next|
+| :--- | :--- | :--- | :--- |:--- |
+|1| E2 | shows the ip of ubuntu | rule out ubuntu ip |check ip on windows |
+|2| E4 | shows ip of windows | ruled out windows ip| check network adapters |
+|3| E6 | turns on network adapter Ubuntu | network adapter was off |  turn on network adapter Ubuntu |
+|4| E7 | turns on network adapter windows | network adapter was off | turn off the firewall  |
+|5| E3 | allow ping by turning off the firewall| the firewall blocked the connection| check the ping |
+|6| E1 | there is Internet connection in Ubuntu| results of ping | check connection on windows|
+|7| E5 | there is Internet connection in Windows| results of ping | end |
+
+ignored evidence: e8
+missing evidence: ping windows to ubuntu
+root cause: Windows Defender Firewall blocks incoming ICMP echo requests (ping) by default on new/Public network profiles
+Fix: 
+```
+New-NetFirewallRule -DisplayName "Allow ping in (ICMPv4)" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow
+```
+Verification: 
+```ubuntu
+ping -c 3 10.0.2.15
+```
+
+```powershell

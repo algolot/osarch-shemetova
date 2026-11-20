@@ -1,0 +1,16 @@
+vita@lab01-ubuntu:~$ sudo journalctl -k -b --no-pager | grep -Ei 'oom|out of memory|killed process|memory cgroup'
+Nov 20 09:01:06 lab01-ubuntu kernel: stress-ng-vm invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=1000
+Nov 20 09:01:06 lab01-ubuntu kernel:  oom_kill_process.cold+0x8/0xac
+Nov 20 09:01:06 lab01-ubuntu kernel: Memory cgroup stats for /system.slice/run-p1826-i956.scope:
+Nov 20 09:01:06 lab01-ubuntu kernel: Memory cgroup min protection 0kB -- low protection 0kB
+Nov 20 09:01:06 lab01-ubuntu kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+Nov 20 09:01:06 lab01-ubuntu kernel: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/system.slice/run-p1826-i956.scope,task_memcg=/system.slice/run-p1826-i956.scope,task=stress-ng-vm,pid=1829,uid=0
+Nov 20 09:01:06 lab01-ubuntu kernel: Memory cgroup out of memory: Killed process 1829 (stress-ng-vm) total-vm:308372kB, anon-rss:129948kB, file-rss:1092kB, shmem-rss:64kB, UID:0 pgtables:344kB oom_score_adj:1000
+vita@lab01-ubuntu:~$ sudo journalctl -b --no-pager -u run-p1826-i956.scope
+Nov 20 09:01:06 lab01-ubuntu systemd[1]: Started run-p1826-i956.scope - [systemd-run] /usr/bin/stress-ng --vm 1 --vm-bytes 256M --vm-keep --oomable --timeout 15s.
+Nov 20 09:01:06 lab01-ubuntu stress-ng[1826]: invoked with '/usr/bin/stress-ng --vm 1 --vm-bytes 256M --vm-keep --oomable --timeout 15s' by user 0 'root'
+Nov 20 09:01:06 lab01-ubuntu stress-ng[1826]: system: 'lab01-ubuntu' Linux 7.0.0-43-generic #43-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:25:25 UTC 2026 x86_64
+Nov 20 09:01:06 lab01-ubuntu stress-ng[1826]: memory (MB): total 956.02, free 480.75, shared 1.09, buffer 4.83, swap 0.00, free swap 0.00
+Nov 20 09:01:06 lab01-ubuntu systemd[1]: run-p1826-i956.scope: The kernel OOM killer killed some processes in this unit.
+Nov 20 09:01:06 lab01-ubuntu systemd[1]: run-p1826-i956.scope: Deactivated successfully.
+Nov 20 09:01:06 lab01-ubuntu systemd[1]: run-p1826-i956.scope: Consumed 197ms CPU time over 210ms wall clock time, 128M memory peak.
