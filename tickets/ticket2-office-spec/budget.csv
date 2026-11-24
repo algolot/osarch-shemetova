@@ -1,0 +1,43 @@
+role,component,model,price_kzt,source,date
+accountant,CPU,AMD Ryzen 5 5600GT OEM,95990,https://shop.kz/offer/protsessor-amd-ryzen-5-5600gt-am4-oem/,2026-11-23
+accountant,Motherboard,MSI B550M PRO-VDH,49990,https://shop.kz/offer/materinskaya-plata-msi-b550m-pro-vdh-am4/,2026-11-23
+accountant,Memory,TeamGroup Elite DDR4-3200 16GB 2x8,76990,https://shop.kz/offer/ddr-4-dimm-16-gb-3200-mhz-team-group-elite-2x-8-gb-kit-box-ted416g3200c22dc01/,2026-11-23
+accountant,SSD,AGI AI178 1 TB 2.5-inch SATA III,69990,https://shop.kz/offer/ssd-nakopitel-1-tb-agi-ai178-2-5-sata-iii/,2026-11-23
+accountant,CPU cooler,DeepCool AG400 LED (R-AG400-BKLNMC-G-1),12990,https://shop.kz/offer/kuler-deepcool-ag400-led/?srsltid=AYCX9vI8kufiHqxxFFECsDOxxAGzIHCCk2YmxLyp1VXsXzxrrUvqbyZh,2026-11-24
+accountant,PSU,DeepCool PF650 WH 650 W (R-PF650D-HA0B-WDEU),29211,https://www.cyberland.kz/ru/catalog/item/20311-blok_pitaniya_deepcool_pf650,2026-11-23
+accountant,Case,DeepCool CC560 Mesh V2 Black,34990,https://shop.kz/offer/korpus-deepcool-cc560-mesh-v2-black/,2026-11-23
+accountant,Monitor,Samsung Essential S3 LS24D304GAIXCI 24-inch IPS FHD,48000,https://kazpar.kz/product/104574-monitor-24-samsung-ls24d304gaixci-ips-1920x1080-100hz-5ms-250kd-m2-1000-1-1xd-sub-1xhdmi-c,2026-11-23
+accountant,OS license,Windows 11 Pro,159999,https://www.microsoft.com/ru-kz/d/windows-11-pro/dg7gmgf0d8h4,2026-11-23
+accountant,Subtotal,Role total,578150,,2026-11-23
+sales,CPU,AMD Ryzen 5 5600GT OEM,95990,https://shop.kz/offer/protsessor-amd-ryzen-5-5600gt-am4-oem/,2026-11-23
+sales,Motherboard,MSI B550M PRO-VDH,49990,https://shop.kz/offer/materinskaya-plata-msi-b550m-pro-vdh-am4/,2026-11-23
+sales,Memory,Patriot Signature Line DDR4-3200 16 GB (2x8 GB) PSD416G3200K,61990,https://shop.kz/offer/ddr-4-udimm-16-gb-3200-mhz-patriot-signature-line-2x8gb-kit-box-psd416g3200k/,2026-11-23
+sales,SSD,AGI AI178 1 TB 2.5-inch SATA III,69990,https://shop.kz/offer/ssd-nakopitel-1-tb-agi-ai178-2-5-sata-iii/,2026-11-23
+sales,CPU cooler,DeepCool AG400 LED (R-AG400-BKLNMC-G-1),12990,https://shop.kz/offer/kuler-deepcool-ag400-led/?srsltid=AYCX9vI8kufiHqxxFFECsDOxxAGzIHCCk2YmxLyp1VXsXzxrrUvqbyZh,2026-11-24
+sales,PSU,DeepCool PF650 WH 650 W (R-PF650D-HA0B-WDEU),29211,https://www.cyberland.kz/ru/catalog/item/20311-blok_pitaniya_deepcool_pf650,2026-11-23
+sales,Case,DeepCool CC560 Mesh V2 Black,34990,https://shop.kz/offer/korpus-deepcool-cc560-mesh-v2-black/,2026-11-23
+sales,Monitor,Samsung Essential S3 LS24D304GAIXCI 24-inch IPS FHD,48000,https://kazpar.kz/product/104574-monitor-24-samsung-ls24d304gaixci-ips-1920x1080-100hz-5ms-250kd-m2-1000-1-1xd-sub-1xhdmi-c,2026-11-23
+sales,OS license,Windows 11 Pro,159999,https://www.microsoft.com/ru-kz/d/windows-11-pro/dg7gmgf0d8h4,2026-11-23
+sales,Subtotal,Role total,563150,,2026-11-23
+developer,CPU,AMD Ryzen 5 7600 OEM,95041,https://itmag.kz/p/88197-processor-amd-ryzen-5-7600-3-8gc-5-1ggc-tur/?utm_source=google&utm_medium=cpc&utm_campaign=%D0%9C%D0%B0%D0%BA%D1%81+%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82+%7C+%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D1%8B+%D0%B4%D0%BB%D1%8F+%D0%9F%D0%9A&utm_content=%7Btargetid%7D+%7C+%7Bplacement%7D&utm_term=%7Bkeyword%7D+%7C+%7Bnetwork%7D&gad_source=1&gad_campaignid=23644469166&gbraid=0AAAABBHFVjif_zp9ZAh91kc3q735kPOyH&gclid=Cj0KCQiAworYBhDoARIsAP5ft3LyTaZ9VwrWyv3hx0QGSA-8AVGsN9jPoZjVXoVok_BQvoDcJuFHsJsaApdiEALw_wcB,2026-11-23
+developer,Motherboard,MSI PRO B650M-P,61990,https://shop.kz/offer/materinskaya-plata-msi-pro-b650m-p-am5/,2026-11-23
+developer,Memory,AMD Radeon R5 Gamer DDR5-5600 32 GB (2x16 GB) R5S532G5600U1K,282990,https://shop.kz/offer/ddr-5-dimm-32-gb-5600-mhz-amd-radeon-r5-gamer-2x-16-gb-kit-box-r5s532g5600u1k/,2026-11-23
+developer,SSD,Kingston NV3 1 TB,85990,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-23
+developer,CPU cooler,DeepCool AG400 LED (R-AG400-BKLNMC-G-1),12990,https://shop.kz/offer/kuler-deepcool-ag400-led/?srsltid=AYCX9vI8kufiHqxxFFECsDOxxAGzIHCCk2YmxLyp1VXsXzxrrUvqbyZh,2026-11-24
+developer,PSU,DeepCool PF650 WH 650 W (R-PF650D-HA0B-WDEU),29211,https://www.cyberland.kz/ru/catalog/item/20311-blok_pitaniya_deepcool_pf650,2026-11-23
+developer,Case,DeepCool CC560 Mesh V2 Black,34990,https://shop.kz/offer/korpus-deepcool-cc560-mesh-v2-black/,2026-11-23
+developer,Monitor,Samsung Essential S3 LS24D304GAIXCI 24-inch IPS FHD,48000,https://kazpar.kz/product/104574-monitor-24-samsung-ls24d304gaixci-ips-1920x1080-100hz-5ms-250kd-m2-1000-1-1xd-sub-1xhdmi-c,2026-11-23
+developer,OS license,Ubuntu Desktop 26.04.1 LTS (free download),0,https://ubuntu.com/download/desktop,2026-11-23
+developer,Subtotal,Role total,651202,,2026-11-23
+designer,CPU,AMD Ryzen 7 7700 OEM,100990,https://shop.kz/offer/protsessor-amd-ryzen-7-7700-am5-oem/,2026-11-23
+designer,Motherboard,MSI PRO B650M-P,61990,https://shop.kz/offer/materinskaya-plata-msi-pro-b650m-p-am5/,2026-11-23
+designer,Memory,AMD Radeon R5 Gamer DDR5-5600 32 GB (2x16 GB) R5S532G5600U1K,282990,https://shop.kz/offer/ddr-5-dimm-32-gb-5600-mhz-amd-radeon-r5-gamer-2x-16-gb-kit-box-r5s532g5600u1k/,2026-11-23
+designer,SSD,Kingston NV3 1 TB,85990,https://shop.kz/offer/ssd-nakopitel-1-tb-kingston-nv3-m-2-pcie-4-0/,2026-11-23
+designer,GPU,Gigabyte GeForce RTX 5060 GAMING OC 8 GB GV-N5060GAMING OC-8GD,300657,https://flexcom.kz/p135453531-gpu-nvidia-gigabyte.html,2026-11-23
+designer,CPU cooler,DeepCool AG400 LED (R-AG400-BKLNMC-G-1),12990,https://shop.kz/offer/kuler-deepcool-ag400-led/?srsltid=AYCX9vI8kufiHqxxFFECsDOxxAGzIHCCk2YmxLyp1VXsXzxrrUvqbyZh,2026-11-24
+designer,PSU,DeepCool PF650 WH 650 W (R-PF650D-HA0B-WDEU),29211,https://www.cyberland.kz/ru/catalog/item/20311-blok_pitaniya_deepcool_pf650,2026-11-23
+designer,Case,DeepCool CC560 Mesh V2 Black,34990,https://shop.kz/offer/korpus-deepcool-cc560-mesh-v2-black/,2026-11-23
+designer,Monitor,Dahua DHI-LM27-P301AY 27-inch IPS QHD,112400,https://shop.kz/offer/monitor-dahua-27-dhi-lm27-p301ay/,2026-11-23
+designer,OS license,Windows 11 Pro,159999,https://www.microsoft.com/ru-kz/d/windows-11-pro/dg7gmgf0d8h4,2026-11-23
+designer,Subtotal,Role total,1182207,,2026-11-23
+all,Grand Total,All four builds,2974709,,2026-11-23
